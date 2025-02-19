@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NETHUNT - LOGIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/eventDescStyle.css" />
+  <link rel="stylesheet" href="./css/navBar.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+  <%- include('notifications') %> <%- include('navBar') %>
+      <div class="container vanta-bg-event">
+        <br><br>
+        <header class="header">
+          <h1>NETHUNT</h1>
+          <marquee class="marqueedesk" behavior="" direction="">An Unsolved Mystery with the usual suspects!!!
+          </marquee>
+          <p class="marqueemob">An Unsolved Mystery with the usual suspects!!!</p>
+          <p class="para-indent">
+            A picture can convey things that words alone cannot fully capture or
+            clarify. However, images can also be misleading. Are you someone who
+            pays close attention to every important detail? If yes, then we have a
+            challenge for you. It's not a test of your thinking abilities, but
+            rather one that will really make your brain work hard. Are you up for
+            it? Here it is...!!!
+          </p>
+          <div class="social-container">
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx321@psgtech.ac.in<br />
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx228@psgtech.ac.in
+          </div>
+        </header>
+        <div class="main-content">
+          <div class="agenda">
+            <h2>Event Details</h2>
+
+            <div class="sessions">
+              <div class="session">
+                <span class="session-head">Round 1 :</span>
+                <ul>
+                  <li>
+                    Guess the computer-related technical term from the image
+                    displayed.
+                  </li>
+                  <li>
+                    Clues will be provided for every image after a few tries/hits.
+                  </li>
+                  <li>Answers are to be entered in the textbox provided.</li>
+                  <li>
+                    For every image:
+                    <ul style="margin-left: 20px;">
+                      <li>First clue appears after 50 hits.</li>
+                      <li>Second clue appears after 100 hits.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Scores will be reduced according to your hit counts. The
+                    answers should not contain any special characters like (, + *
+                    / &lt; &gt; - $ &amp;).
+                  </li>
+                  <li>Ignore the space between the words in the answer.</li>
+                  <li>
+                    Example: "Net-Hunt" must be entered as "nethunt", "1" must be
+                    entered as "one".
+                  </li>
+                  <li><strong>Visit the website:</strong>
+                    <ul style="margin-left: 20px;">
+                      <li>For candidates: <a href="https://nethunt.candidate.psglogin.in/login" rel="noopener noreferrer" target="_blank" style="color:#0676ed;">Click Here</a></li>
+                      <li>For alumnus: <a href="https://nethunt.alumni.psglogin.in/login" rel="noopener noreferrer" target="_blank" style="color:#0676ed;">Click Here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="details">
+            <div class="register closed">
+              <h2>Registration Closed</h2>
+            </div>
+            <div class="info">
+              <div class="team-size">
+                <h3>Team size:</h3>
+                <p>1</p>
+              </div>
+              <div class="date">
+                <h3>16-20</h3>
+                <p>September 2024</p>
+              </div>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <p>
+                PREVARSHINI R J<br />
+                9789424077
+              </p>
+              <p>
+                VIJAY KEERTHY S <br />
+                7806974480
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <h2>Rules</h2>
+          <ol type="number">
+            <li>
+              In case of a tie, the winner will be selected based on the number of
+              tries.
+            </li>
+            <li>
+              In the leaderboard, if both participants are from the same
+              college, only one will be considered with fewer tries.
+            </li>
+            <li>
+              Any form of malpractice will lead to disqualification, and the
+              organizers have all the rights to disqualify anyone without any
+              prior notice.
+            </li>
+            <li>
+              Selection will be made after verification of the student's
+              credentials.
+            </li>
+            <li>Students with invalid credentials will be disqualified.</li>
+            <li>Winners will be announced during the valedictory ceremony.</li>
+          </ol>
+        </footer>
+      </div>
+      <script>
+        function applyVantaBackground() {
+          const element = document.querySelector(".vanta-bg-event");
+
+          if (window.innerWidth > 600) {
+            VANTA.WAVES({
+              el: ".vanta-bg-event",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: true,
+              minHeight: 200.0,
+              minWidth: 200.0,
+              scale: 1.0,
+              scaleMobile: 1.0,
+              color: 0x50519,
+              shininess: 15.0,
+              waveHeight: 20.0,
+              waveSpeed: 0.3,
+              zoom: 0.6,
+            });
+          } else {
+            element.classList.remove("vanta-bg-event");
+          }
+        }
+
+        window.onload = applyVantaBackground;
+        window.onresize = applyVantaBackground;
+      </script>
+      <script src="./js/eventRegister.js"></script>
+      <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

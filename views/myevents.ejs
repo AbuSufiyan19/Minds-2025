@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/myEvents.css">
+    <link rel="stylesheet" href="./css/navBar.css">
+    <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="scrollbar-hide">
+    <%- include('navBar') %>
+    <%- include('notifications') %>
+    <br>
+    <header>
+        <div class="header-left">
+            <h1>My Events</h1>
+        </div>
+        <div class="header-right">
+            <input type="text" id="teamIdInput" placeholder="Enter Team ID">
+            <button onclick="joinTeam()">Join</button>
+        </div>
+    </header>
+
+    <section>
+       
+        <div class="event-cards">
+            <% if(eventDetails && eventDetails.length > 0){ %>
+            <% eventDetails.forEach(event => { %>
+            <div class="card">
+                <div class="card-img">
+                    <% 
+                    let path = (event.schemaName === "LastStandRacing" || event.schemaName === "LastStandValorant") ? "LastStand" : event.schemaName;
+                  %>
+                  <img src="images/<%= path %>.png" alt="<%= event.schemaName %>">
+                </div>
+                <% 
+                const eventPrefixes = {
+                    'Algocode': 'AlgoCode',
+                    'Code Sprint': 'CodeSprint',
+                    'CrickBid Auction': 'CrickBidAuction',
+                    'Datathon': 'Datathon',
+                    'Last Stand Valorant': 'LastStandValorant',
+                    'Last Stand Racing': 'LastStandRacing',
+                    'Math Pirates': 'MathPirates',
+                    'Nethunt': 'NetHunt',
+                    'Picture Perfect': 'PicturePerfect',
+                    'Techiadz': 'Techiadz',
+                    'Thinklytics': 'Thinklytics',
+                    'Triple Trouble': 'TripleTrouble',
+                    'Witty Mindz': 'WittyMindz',
+                };
+            
+                // Get the prefix from the schemaName
+                const prefixKey = Object.keys(eventPrefixes).find(key => eventPrefixes[key] === event.schemaName);
+            %>
+            <h6 class="card-head">
+                <% if (prefixKey) { %>
+                    <span><%= prefixKey %></span> <!-- Display the prefix like TT, WM -->
+                <% } %>
+            </h6>                
+            <% if (event.prefix !== 'NT' && event.prefix !== 'CS' && event.prefix !== 'PP' && event.prefix !== 'LR') { %>
+                <h6 class="teamid1">Team ID:&nbsp;<%= event.eventDetail.teamId %></h6>
+                <% } %>
+                <div class="participants">
+                    <h3>Participants:</h3>
+                    <div class="email-list">
+                        <% event.eventDetail.studentName.forEach(name => { %>
+                        <p><%= name %></p>
+                        <% }); %>
+                    </div>
+                </div>
+                    <p class="maxmin <%= event.isGreen ? 'green-card' : 'red-card' %>">Team Size: <%= event.Count %>/<%= event.maxCount %></p>
+                   <!-- <button class="btn-delete"  onclick="deleteEvent('<%= event.eventDetail.teamId %>', '<%= event.schemaName %>')">Delete</button> -->
+                    <!-- Delete button -->
+                    <button class="btn-delete" id="deleteBtn-<%= event.eventDetail.teamId %>" onclick="toggleButtons('<%= event.eventDetail.teamId %>')">Cancel Registration</button>
+                    
+                    <!-- Confirm and Cancel buttons, initially hidden -->
+                    <div id="confirmCancelBtns-<%= event.eventDetail.teamId %>" class="btn-group" style="display: none !important;">
+                        <button class="btn-confirm" onclick="deleteEvent('<%= event.eventDetail.teamId %>', '<%= event.schemaName %>')">Confirm</button>
+                        <button class="btn-cancel" onclick="cancelDelete('<%= event.eventDetail.teamId %>')">Cancel</button>
+                    </div>
+
+            </div>
+            <div class="sssss">
+
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                type="module"></script>
+                
+                <dotlottie-player src="https://lottie.host/0451d5be-c067-4a07-9238-af98678f9e50/4TmJz6qtHV.json"
+                background="transparent" speed="1" style="width: 100%; height: 100%" direction="1" playMode="normal" loop
+                autoplay> </dotlottie-player>
+            </div>
+            <% }) %>
+            <% } else { %>
+                <div class="eventempty sssss">
+                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> <dotlottie-player src="https://lottie.host/638a75d3-7a33-40b6-be99-a51120b3ffae/PWLAhY1RxB.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+                    <p>You haven't registered for any events yet. Explore our events and Register now!</p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+     <script>
+        
+        function toggleButtons(teamId) {
+            // Hide the delete button
+            document.getElementById(`deleteBtn-${teamId}`).style.display = 'none';
+            
+            // Show the confirm and cancel buttons
+            document.getElementById(`confirmCancelBtns-${teamId}`).style.display = 'flex';
+        }
+
+        function cancelDelete(teamId) {
+            // Show the delete button again
+            document.getElementById(`deleteBtn-${teamId}`).style.display = 'block';
+            
+            // Hide the confirm and cancel buttons
+            document.getElementById(`confirmCancelBtns-${teamId}`).style.display = 'none';
+        }
+
+        function joinTeam() {
+            const teamId = document.getElementById('teamIdInput').value;
+            
+            if (!teamId) {
+                showNotification('Please enter a team ID.');
+                return;
+            }
+    
+            fetch('/joinevent', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ teamId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('Joined the team successfully',true);
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000);
+                } else {
+                    showNotification(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('An error occurred. Please try again later.');
+            });
+        }
+    </script>
+    <script>
+        function deleteEvent(teamId,schemaName) {
+            const registerButton = document.querySelector('.btn-confirm');
+            registerButton.textContent = "Please Wait...";
+            registerButton.style.opacity = '0.7'; 
+            registerButton.style.pointerEvents = 'none';
+            const url = `/delete/${schemaName}/${teamId}`;
+            fetch(url, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (response.ok) {
+                    showNotification('Your registration for the event has been successfully canceled',true);
+                     registerButton.textContent = "Removed";
+                     registerButton.style.opacity = '1'; 
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                } else {
+                    return response.json().then(data => {
+                        showNotification(data.message || 'Failed to cancel the registration.',false);
+                        registerButton.textContent = "Confirm";
+                        registerButton.style.opacity = '1'; 
+                        registerButton.style.pointerEvents = 'auto';
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting event:', error);
+                showNotification('An error occurred while deleting the event.',false);
+                registerButton.textContent = "Confirm";
+                registerButton.style.opacity = '1'; 
+                registerButton.style.pointerEvents = 'auto';
+            });
+        }
+</script>
+<script src="./js/showNotification.js"></script>
+</body>
+</html>

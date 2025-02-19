@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECHIADZ - LOGIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/eventDescStyle.css" />
+  <link rel="stylesheet" href="./css/navBar.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+  <%- include('notifications') %> <%- include('navBar') %>
+      <div class="container vanta-bg-event">
+        <br><br>
+        <header class="header">
+          <h1>TECHIADZ</h1>
+          <marquee class="marqueedesk" behavior="" direction="">
+            Challenge the Known, Create the Unimaginable
+          </marquee>
+          <p class="marqueemob">Challenge the Known, Create the Unimaginable</p>
+
+          <p class="para-indent">
+            Techiadz is an innovative competition that puts participants' branding
+            and marketing skills to the test. Teams will engage in tasks that
+            challenge their ability to identify logos, create compelling content,
+            and market unique products. With a focus on creativity and strategic
+            thinking, Techiadz offers a platform for showcasing talent and pushing
+            the boundaries of traditional marketing approaches.
+          </p>
+
+          <div class="social-container">
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx211@psgtech.ac.in<br />
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx224@psgtech.ac.in
+          </div>
+        </header>
+        <div class="main-content">
+          <div class="agenda">
+            <h2>Event Details</h2>
+
+            <div class="sessions">
+              <div class="session">
+                <span class="session-head">Round 1 :</span>
+                <ul>
+                  <li>
+                    The first round includes multiple-choice questions (MCQs) on
+                    logos and slogans, and a 200-300 word essay.
+                  </li>
+                  <li>
+                    Participants will answer MCQs to identify organizations or
+                    products and write an essay on a given topic to showcase their
+                    skills.
+                  </li>
+                  <li>
+                    Five selected teams will advance to the second round.
+                  </li>
+                </ul>
+              </div>
+              <div class="session">
+                <span class="session-head">Round 2 :</span>
+                <ul>
+                  <li>Each team will have 2-3 members onstage.</li>
+                  <li>The round lasts 1 hour and takes place in classrooms.</li>
+                  <li>
+                    Teams must market an unusual product provided by the
+                    organizers.
+                  </li>
+                  <li>
+                    Teams should create a logo, slogan, and other details for the
+                    product within the time limit.
+                  </li>
+                  <li>Presentation should be 5-7 minutes long.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="details">
+            <div class="register closed">
+              <h2>Registration Closed</h2>
+            </div>
+            <div class="info">
+              <div class="team-size">
+                <h3>Team size:</h3>
+                <p>2-3</p>
+              </div>
+              <div class="date">
+                <h3>21-22</h3>
+                <p>September 2024</p>
+              </div>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <p>KAVIN RATHINAM M<br />8870834420</p>
+              <p>SANJAY KARTHICK V<br />9047421809</p>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <h2>Rules</h2>
+          <ol type="number">
+            <li>
+              All team members must register for the event. In the first round,
+              team of two will participate, and mobile phones are not allowed.
+            </li>
+            <li>
+              Five teams will advance to the final round, where up to three
+              members can present.
+            </li>
+            <li>
+              In the final round, teams will create a logo, slogan, and other
+              details for an unusual product provided by the organizers.
+            </li>
+            <li>
+              Evaluation will be based on creativity, humor, skill, and marketing
+              ethics. The judges and the event's organizers decisions are final.
+            </li>
+          </ol>
+        </footer>
+      </div>
+      <script>
+        function applyVantaBackground() {
+          const element = document.querySelector(".vanta-bg-event");
+
+          if (window.innerWidth > 600) {
+            VANTA.WAVES({
+              el: ".vanta-bg-event",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: true,
+              minHeight: 200.0,
+              minWidth: 200.0,
+              scale: 1.0,
+              scaleMobile: 1.0,
+              color: 0x50519,
+              shininess: 15.0,
+              waveHeight: 20.0,
+              waveSpeed: 0.3,
+              zoom: 0.6,
+            });
+          } else {
+            element.classList.remove("vanta-bg-event");
+          }
+        }
+
+        window.onload = applyVantaBackground;
+        window.onresize = applyVantaBackground;
+      </script>
+      <script src="./js/eventRegister.js"></script>
+      <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+.office-bearers h1 {
+  margin-bottom: 40px;
+}
+
+.office-bearers .lottie-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.office-bearers img {
+  max-width: 100%;
+}
+
+.office-bearers .btn {
+  padding: 0.5em 1em;
+  margin-top: 20px;
+  border: 1px white solid;
+  background:transparent;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.office-bearers .profile-container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 20px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.office-bearers .profile {
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 210px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 2;
+}
+
+.office-bearers .profile:hover {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  transition: 0s;
+}
+
+.office-bearers .streamers {
+  display: flex;
+  text-align: center;
+}
+
+.office-bearers .streamers img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.office-bearers .front {
+  transition: 200ms;
+}
+
+.office-bearers .front > img {
+  border-radius: 12px;
+  width: 130px;
+}
+
+.office-bearers .front .name {
+  margin: 0.75em 0;
+  color: #ddae2d;
+}
+
+.office-bearers .front .role {
+  color: white;
+  text-align: left;
+  width: 50%;
+}
+
+.office-bearers .front .status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.office-bearers .front .streamers img {
+  border: 1px solid #0b0c2a;
+}
+
+.office-bearers .front .streamers img:nth-child(1) {
+  z-index: 1;
+  transform: translateX(15px);
+}
+
+.office-bearers .front .streamers img:nth-child(2) {
+  transform: translateX(10px);
+}
+
+.office-bearers .back {
+  position: absolute;
+  top: 56%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.office-bearers .back .streaming-info {
+  columns: 2;
+  column-rule: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.office-bearers .back .profile-stat {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.office-bearers .back .profile-stat span {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.office-bearers .back .streamers {
+  display: flex;
+}
+
+.office-bearers .backgroundWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: scale(0.2, 0.8);
+  opacity: 0;
+  border-radius: 12px;
+}
+
+.office-bearers .profile:hover .front {
+  transform: translateY(-20%) scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+.office-bearers .profile:hover .front .name {
+  animation: profileName 150ms forwards;
+  transition: 0.3s ease-in-out;
+}
+
+.office-bearers .profile:hover .front .status {
+  opacity: 0;
+}
+
+.office-bearers .profile:hover .back {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.office-bearers .profile:hover .back .streamers {
+  width: 100%;
+  justify-content: space-around;
+  transition: 0.3s ease-in-out;
+}
+
+.office-bearers .profile:hover .back .streamer {
+  font-size: 0.9rem;
+}
+
+.office-bearers .profile:hover .back .name {
+  font-weight: bold;
+}
+
+.office-bearers .profile:hover .rank {
+  top: -35px;
+  right: -30px;
+}
+
+.office-bearers .profile:hover .backgroundWrapper {
+  transition: transform 200ms ease-in-out, opacity 100ms linear;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transform: scale(1.1, 1.1);
+}
+
+.office-bearers .rank {
+  position: absolute;
+  right: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 0.5em 0.5em;
+  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
+  transition: 250ms ease-in-out;
+}
+
+@keyframes profileName {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+  50% {
+    text-align: center;
+    opacity: 0;
+  }
+  100% {
+    text-align: center;
+    opacity: 1;
+  }
+}

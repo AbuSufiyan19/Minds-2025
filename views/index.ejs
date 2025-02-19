@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="LOGIN, an esteemed international inter-collegiate technical symposium now in its 33rd edition, is proudly presented by the Computer Applications Association and Computational Sciences Association of PSG College of Technology, Coimbatore.">
+  <meta name="keywords"
+    content="psgtech, psg, login, login-psg-tech, login2024, caa, amcs, loginpsgtech, loginpsg, loginwebsite, psgtechlogin, login mca psgtech, login mca, mcaloginpsgtech, amcsloginpsgtech, login psgtech, login">
+  <meta name="author" content="Login - 2024">
+  <meta property="og:image" content="/images/loginPrimaryLogo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login 2024</title>
+  <link rel="stylesheet" href="./css/indexstyles.css">
+  <link rel="stylesheet" href="./css/navBar.css">
+  <link rel="stylesheet" href="./css/devteam.css">
+  <link rel="stylesheet" href="./css/officeBearers.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+  <%- include('navBar') %>
+    <section id="landing-section">
+      <div class="space-logo reveal-head">
+        <div class="logos">
+
+        </div>
+        <br><br><br>
+        <div class="landcents">
+          <div class="landerh">
+            <h1>PSG COLLEGE OF TECHNOLOGY</h1><br>
+            <div class="lltext">
+              <h2 style="font-family: Satoshi;">COMPUTER APPLICATIONS ASSOCIATION</h2>
+              <h2 style="font-family: Satoshi;">COMPUTATIONAL SCIENCES ASSOCIATION</h2><BR>
+            </div>
+
+            <h5>Proudly Present</h5><br><br>
+            <div class="logintext">
+              <object data="./images/primaryanimatedlogo.svg" type="image/svg+xml"></object>
+              <br><br>
+            </div><br>
+            <marquee class="reg-closed">Registrations For All Events Has Been Closed‼️</marquee>
+            <div class="buttttons">
+              <% if(!user) { %>
+                <div class="student-btn-container">
+                  <button class="twos" onclick="window.location.href='/login'">
+                    LOGIN
+                  </button>
+                  <!-- <button class="twos" onclick="window.location.href='/register'">
+                    REGISTER
+                  </button> -->
+                </div>
+                <div class="alumni-btn-container">
+                  <button class="alumni-reg-btn" onclick="window.location.href='/alumnusregister'">
+                    <span>Alumni Registration</span>
+                    &nbsp;<i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+                <% } %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <div class="price-container revealup">
+      <div class="prizepool">
+        <img src="images/rupee.png" alt="Rupees" />
+        <span id="counter">0</span>
+      </div>
+      <p class="prize-text">Worth Prize Pool</p>
+      <p class="exclusive">International Inter-Collegiate Tech-Symposium for PG Students</p>
+      <p class="exclusive-pg"><span>Note: </span>Only M.E., MCA, M.Sc., M.Tech., M.Com., and M.A. students can register
+        and participate.</p>
+    </div>
+
+    <section id="about-section">
+      <div class="aboutcent">
+        <div class="revealup theme-about">
+          <h1 class="coming-soon">LOGIN 2024 - AI Nexus: Crafting the Symphony of Digital Intellect </h1>
+        </div>
+        <br>
+
+        <div class="about revealup">
+          <h1>What is LOGIN??</h1>
+          <div class="abouttext">
+            <p> <b>LOGIN</b>, an esteemed international technical symposium now in its <b>33rd edition</b>, is proudly
+              presented by the <b>Computer Applications Association</b> and <b>Computational Sciences Association.</b>
+              <br><br> As AI reshapes our digital world, much like a symphony where each instrument plays a vital role,
+              AI technologies come together to form a powerful network. This symposium explores AI's transformative
+              impact, highlighting its potential to revolutionize industries, enhance daily life, and tackle global
+              challenges with creativity and compassion. <br><br> Scheduled for the <b> 21st and 22nd of September
+                2024</b> , we invite the <b>postgraduate students</b> worldwide to engage in a dynamic experience of
+              competition and collaboration. <br><br><b> Join us as we refine, recognize, and reward those contributing
+                to the symphony of digital intellect, celebrating AI's ability to inspire, innovate, and impact the
+                world.</b>
+            </p>
+
+          </div>
+        </div>
+
+        <br>
+      </div>
+    </section>
+
+
+    <!-- CARDD -->
+
+    <section id="events-section">
+      <h1 style="text-align: center; color: #fff;" class="revealup inner-heading">Events</h1>
+      <div class="cddd revealup">
+        <div class="cardanim">
+
+          <div class="cards">
+
+
+            <div class="rows">
+
+              <div class="cardss revealal">
+                <div class="card-img">
+                  <img src="images/AlgoCode.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Algocode</h6>
+                  <h6 class="secondary-text">Co/de and Conquer</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/algocode'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Technical</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="cardss">
+                <div class="card-img">
+                  <img src="images/CodeSprint.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Code Sprint</h6>
+                  <h6 class="secondary-text">Code your way to Excellence!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/codesprint'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Online</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Technical</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="cardss reveal">
+                <div class="card-img">
+                  <img src="images/CrickBidAuction.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Crickbid Auction</h6>
+                  <h6 class="secondary-text">PICK YOUR DARING XI</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/crickbidauctions'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Hybrid</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-Technical</h6>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="rows">
+
+              <div class="cardss revealal">
+                <div class="card-img">
+                  <img src="images/Datathon.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Datathon</h6>
+                  <h6 class="secondary-text">Where Data Meets Brilliance!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/datathon'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Technical</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="cardss">
+                <div class="card-img">
+                  <img src="images/LastStand.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Last Stand</h6>
+                  <h6 class="secondary-text">Play or Be Played</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/laststand'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-Technical</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="cardss reveal">
+                <div class="card-img">
+                  <img src="images/MathPirates.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Math Pirates</h6>
+                  <h6 class="secondary-text">Hoist the anchor and set the sail for a math adventure!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/mathpirates'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-Technical</h6>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="rows">
+
+              <div class="cardss revealal">
+                <div class="card-img">
+                  <img src="images/NetHunt.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Nethunt</h6>
+                  <h6 class="secondary-text">An Unsolved Mystery with the usual Suspects</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/nethunt'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Online</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Technical</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="cardss">
+                <div class="card-img">
+                  <img src="images/PicturePerfect.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Picture Perfect</h6>
+                  <h6 class="secondary-text">Picture the Possibilities</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/pictureperfect'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Hybrid</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-Technical</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="cardss reveal">
+                <div class="card-img">
+                  <img src="images/Techiadz.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Techiadz</h6>
+                  <h6 class="secondary-text">Our Vision! Your Innovation!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/techiadz'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-Technical</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="cardss revealal">
+                <div class="card-img">
+                  <img src="images/Thinklytics.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Thinklytics</h6>
+                  <h6 class="secondary-text">Contemplate Data Differently!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/thinklytics'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Technical</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cardss">
+                <div class="card-img">
+                  <img src="images/TripleTrouble.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Triple Trouble</h6>
+                  <h6 class="secondary-text">Triple up the fun, with trouble on the run</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/tripletrouble'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-technical</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cardss reveal">
+                <div class="card-img">
+                  <img src="images/WittyMindz.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Witty Mindz</h6>
+                  <h6 class="secondary-text">Expand Your Mental Horizons</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/wittymindz'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-technical</h6>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="rows">
+              <div class="cardsstar">
+                <div class="cardstar-img">
+                  <img src="images/StarOfLogin.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">Star of Login</h6>
+                  <h6 class="secondary-text">Talent shines despite competition.</h6>
+                  <h6 class="secondary-text soljustify">Winner?...Oh runner? then lace up for the finale. Showcase your
+                    skills and test your limits in this event to
+                    become the winner of winners and get titled as 'Star of Login. Do take the chance to prove your
+                    ability and
+                    claim your place in the running history!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/staroflogin'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Offline</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-technical</h6>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="sssss">
+
+          <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+            type="module"></script>
+
+          <dotlottie-player src="https://lottie.host/0451d5be-c067-4a07-9238-af98678f9e50/4TmJz6qtHV.json"
+            background="transparent" speed="1" style="width: 100%; height: 100%" direction="1" playMode="normal" loop
+            autoplay> </dotlottie-player><br><br>
+          <dotlottie-player src="https://lottie.host/6e51615a-1dfc-4f93-8116-080eaf72e11c/u2KIWLi7L6.json"
+            background="transparent" speed="1" style="width: 100%; height: 100%" direction="1" playMode="normal" loop
+            autoplay></dotlottie-player>
+          <dotlottie-player src="https://lottie.host/0451d5be-c067-4a07-9238-af98678f9e50/4TmJz6qtHV.json"
+            background="transparent" speed="1" style="width: 100%; height: 100%" direction="1" playMode="normal" loop
+            autoplay> </dotlottie-player><br><br>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="sponsors-section">
+      <h1 style="text-align: center; color: #fff;" class="revealup inner-heading">Event Sponsors</h1>
+      <br>
+      <div class="main-sponsors revealup">
+      
+        <div class="sponsor-img">
+          <img src="sponsors/arcesium-logo.jpg" alt="">
+        </div>
+
+        <div class="sponsor-img">
+          <img src="sponsors/klaplus-logo.png" alt="">
+        </div>
+      </div>
+      <br><br>
+    </section>
+
+    <section class="office-bearers">
+      <h1 style="text-align: center; color: #fff;" class="revealup inner-heading">Office Bearers</h1>
+      <div class="profile-container">
+
+        <div class="profile revealup">
+          <!-- Kavin -->
+          <div class="front">
+            <img src="officebearers/kavin2.jpg" alt="profile">
+            <h3 class="name">Kavin S</h3>
+            <div class="status">
+              <p class="role">Secretary</p>
+              <div class="streamers">
+                <img src="./images/instagram.png" alt="Instagram">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <img src="./images/email.png" alt="Email">
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="streaming-info">
+              <p class="profile-stat"> <span></span></p>
+              <p class="profile-stat"><span></span></p>
+            </div>
+            <button class="btn" disabled>Secretary</button>
+            <p></p>
+            <div class="streamers">
+              <a href="https://www.instagram.com/k.a_v.i.n/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/instagram.png" alt="Instagram">
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/kavin-s-0613a622a/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                  </div>
+                </div>
+              </a>
+              <a href="mailto:23mx115@psgtech.ac.in">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/email.png" alt="Email">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="backgroundWrapper"></div>
+        </div>
+
+
+        <div class="profile revealup">
+          <!-- RadhaKrishnan -->
+          <div class="front">
+            <img src="officebearers/radhakrishnan.jpg" alt="profile">
+            <h3 class="name">Radhakrishnan M</h3>
+            <div class="status">
+              <p class="role">Treasurer</p>
+              <div class="streamers">
+                <img src="./images/instagram.png" alt="Instagram">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <img src="./images/email.png" alt="Email">
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="streaming-info">
+              <p class="profile-stat"> <span></span></p>
+              <p class="profile-stat"><span></span></p>
+            </div>
+            <button class="btn" disabled>Treasurer</button>
+            <p></p>
+            <div class="streamers">
+              <a href="https://www.instagram.com/kitttoou/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/instagram.png" alt="Instagram">
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/radhakrishnan-madhavan-a97816233/" target="_blank"
+                rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                  </div>
+                </div>
+              </a>
+              <a href="mailto:20pw25@psgtech.ac.in">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/email.png" alt="Email">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="backgroundWrapper"></div>
+        </div>
+
+
+        <div class="profile revealup">
+          <!-- Jonathan Cecil -->
+          <div class="front">
+            <img src="officebearers/jonathancecil.jpg" alt="profile">
+            <h3 class="name">Jonathan Cecil</h3>
+            <div class="status">
+              <p class="role">Joint Secretary</p>
+              <div class="streamers">
+                <img src="./images/instagram.png" alt="Instagram">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <img src="./images/email.png" alt="Email">
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="streaming-info">
+              <p class="profile-stat"> <span></span></p>
+              <p class="profile-stat"><span></span></p>
+            </div>
+            <button class="btn" disabled>Joint Secretary</button>
+            <p></p>
+            <div class="streamers">
+              <a href="https://www.instagram.com/cecil.jonathan/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/instagram.png" alt="Instagram">
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/jonathancecil01/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                  </div>
+                </div>
+              </a>
+              <a href="mailto:20pt12@psgtech.ac.in">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/email.png" alt="Email">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="backgroundWrapper"></div>
+        </div>
+
+
+        <div class="profile revealup">
+          <!-- Reethika -->
+          <div class="front">
+            <img src="officebearers/reethika.jpg" alt="profile">
+            <h3 class="name">Reethika S</h3>
+            <div class="status">
+              <p class="role">Joint Treasurer</p>
+              <div class="streamers">
+                <img src="./images/instagram.png" alt="Instagram">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <img src="./images/email.png" alt="Email">
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="streaming-info">
+              <p class="profile-stat"> <span></span></p>
+              <p class="profile-stat"><span></span></p>
+            </div>
+            <button class="btn" disabled>Joint Treasurer</button>
+            <p></p>
+            <div class="streamers">
+              <a href="https://www.instagram.com/reethuuu.s/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/instagram.png" alt="Instagram">
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/reethika-s-4a359a1b2/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                  </div>
+                </div>
+              </a>
+              <a href="mailto:23mx121@psgtech.ac.in">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/email.png" alt="Email">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="backgroundWrapper"></div>
+        </div>
+
+
+        <div class="profile revealup">
+          <!-- Vishvabala -->
+          <div class="front">
+            <img src="officebearers/vishvabala.jpg" alt="profile">
+            <h3 class="name">Vishvabala C S</h3>
+            <div class="status">
+              <p class="role">Executive Coordinator</p>
+              <div class="streamers">
+                <img src="./images/instagram.png" alt="Instagram">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <img src="./images/email.png" alt="Email">
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <div class="streaming-info">
+              <p class="profile-stat"> <span></span></p>
+              <p class="profile-stat"><span></span></p>
+            </div>
+            <button class="btn" disabled>Executive Coordinator</button>
+            <p></p>
+            <div class="streamers">
+              <a href="https://www.instagram.com/vishvabalac/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/instagram.png" alt="Instagram">
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/vishvabalacs/" target="_blank" rel="noopener noreferrer">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                  </div>
+                </div>
+              </a>
+              <a href="mailto:20pc39@psgtech.ac.in">
+                <div class="streamer">
+                  <div class="icon">
+                    <img src="./images/email.png" alt="Email">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="backgroundWrapper"></div>
+        </div>
+
+
+        <!-- 
+        <div class="lottie-container">
+          <dotlottie-player src="https://lottie.host/bd50a44a-2a4e-494d-9d81-bacdeb44f3c0/qXAHabEpiF.json"
+            background="transparent" speed="0.8" style="width: 100%; height: 300px;" loop autoplay></dotlottie-player>
+        </div> -->
+      </div>
+    </section>
+
+
+    <br><br>
+
+    <h1 style="text-align: center; color: #ffffff;" class="revealup inner-heading">Dev Team</h1>
+    <br>
+
+    <section class="team-section revealup">
+      <div class="circle-container">
+
+        <div style="--total: 10;" class="circle-wrapper">
+          <div class="center-element">Dev Team</div>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-1">
+          <label id="avatar-1" for="radio-avatar-1" class="avatar" style="--i:9">
+            <img src="./webteam/lokesh.jpg" alt="Lokesh">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Lokesh P (Coordinator)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/lokesh-p-a5752328b/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-2">
+          <label id="avatar-2" for="radio-avatar-2" class="avatar" style="--i:10">
+            <img src="./webteam/valli.jpeg" alt="Valli">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Valli V Narayanan (Co Coordinator)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/vallivn18/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-3">
+          <label id="avatar-3" for="radio-avatar-3" class="avatar" style="--i:1">
+            <img src="./webteam/abu.jpg" alt="Abu Sufiyan">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Abu Sufiyan I (Fullstack Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/abusufiyan19/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-4">
+          <label id="avatar-4" for="radio-avatar-4" class="avatar" style="--i:2">
+            <img src="./webteam/nishanth.jpg" alt="Nishanth">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Nishanth T (Backend Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/nishanth-t-720bbb226/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-5">
+          <label id="avatar-5" for="radio-avatar-5" class="avatar" style="--i:3">
+            <img src="./webteam/rohith.jpg" alt="Rohith">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Rohith S (Frontend Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/rohith-s07/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-6">
+          <label id="avatar-6" for="radio-avatar-6" class="avatar" style="--i:4">
+            <img src="./webteam/kavinrathinam.jpeg" alt="Kavin M">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Kavin M (Infra & Deployment)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/m-kavin-408b38292/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-7">
+          <label id="avatar-7" for="radio-avatar-7" class="avatar" style="--i:5">
+            <img src="./webteam/sivaraman.jpg" alt="Sivaraman">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Sivaraman B (Frontend Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/sivaraman-%E2%9C%A8-792805218/" target="_blank"
+              rel="noopener noreferrer"><img src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-8">
+          <label id="avatar-8" for="radio-avatar-8" class="avatar" style="--i:6">
+            <img src="./webteam/Sivapoopathi.jpeg" alt="Sivapoopathi">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Sivapoopathi M (Backend Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/siva-poopathi-a72049299/" target="_blank"
+              rel="noopener noreferrer"><img src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-9">
+          <label id="avatar-9" for="radio-avatar-9" class="avatar" style="--i:7">
+            <img src="./webteam/Vijay.jpeg" alt="Vijay Keerthi">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Vijay Keerthi S (Frontend Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/vijaykeerthy/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+          <input type="radio" name="radio-avatar" id="radio-avatar-10">
+          <label id="avatar-10" for="radio-avatar-10" class="avatar" style="--i:8">
+            <img src="./webteam/saran.jpg" alt="Saran">
+            <svg viewBox="0 0 300 300">
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Saran S P (Frontend Developer)</textPath>
+              </text>
+            </svg>
+            <a href="https://www.linkedin.com/in/saran-s-p-248541255/" target="_blank" rel="noopener noreferrer"><img
+                src="images/linkedin.png" alt="linkedin"></a>
+          </label>
+
+
+
+
+
+
+
+          <!-- <input type="radio" name="radio-avatar" id="radio-avatar-9">
+        <label id="avatar-9" for="radio-avatar-9" class="avatar" style="--i:9">
+          <img src="./images/Staroflogin.png" alt="">
+          <svg viewBox="0 0 300 300">
+            <text fill="currentColor">
+              <textPath xlink:href="#circlePath">Name</textPath>
+            </text>
+          </svg>
+        </label> -->
+
+        </div>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 300 300" width="0" height="0">
+          <defs>
+            <path id="circlePath" d="M 150, 150 m -100, 0 a 100,100 0 0,1 200,0 a 100,100 0 0,1 -200,0" />
+          </defs>
+        </svg>
+
+      </div>
+      <div class="sssss">
+        <dotlottie-player src="https://lottie.host/f005c67e-d120-485e-95e4-10289117525d/6zaJqnqr7A.json"
+          background="transparent" speed="1" style="width: 100%; height: 100%; opacity: 20%;" direction="5"
+          playMode="normal" loop autoplay></dotlottie-player>
+      </div>
+
+    </section>
+
+    <br><br>
+
+    <section id="footer-section">
+      <footer>
+        <div class="ffbox">
+          <div class="ffimg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1914293960344!2d77.00024787355565!3d11.02425965457647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8582f1435fa59%3A0x137d95bfd8909293!2sPSG%20College%20Of%20Technology%20-!5e0!3m2!1sen!2sin!4v1723285596362!5m2!1sen!2sin"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="fftxt">
+            <h1>PSG COLLEGE OF TECHNOLOGY</h1>
+            <h4>PEELAMEDU</h4>
+            <h4>COIMBATORE - 641004</h4><br>
+            <h3 style="color: #ddae2d;">BUS ROUTES</h3>
+            <h4>GANDHIPURAM to PSG TECH:</h4>
+            <p>105C, 108A, 19C, 19D, 20A, 20D, 30D, 40A, 40B</p>
+            <h4>SINGANALLUR to PSG TECH:</h4>
+            <p>140, S11, S1, S16, S21B</p>
+            <h4>UKKADAM/RAILWAY STATION to PSG TECH:</h4>
+            <p>90A, 16C, 16B, 10A, S7A</p>
+          </div>
+          <div class="fflinks">
+            <div class="fflinkicon">
+              <a href="https://www.instagram.com/loginpsgtech/" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="mailto:login@psgtech.ac.in"><i class="fa-regular fa-envelope"></i></a>
+              <a href="https://www.linkedin.com/company/login-psg-tech/" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <br><br>
+            <h4>Phone: <a href="tel:+919384397477">+91 9384397477</a></h4>
+            <h4 style="color: #ddae2d;">Technical Support Contact</h4>
+            <h4>Lokesh: &nbsp&nbsp&nbsp 8072822922</h4>
+            <h4>Abu: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 8428704114</h4>
+            <h4>Nishanth: &nbsp9655442017</h4>
+            <h4>Rohith: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp9677813318</h4>
+            <h4 style="color: #ddae2d;">Accommodation Details Contact</h4>
+            <h4>Govind Raghavendran: &nbsp8925617246</h4>
+            <h4>Keerthana S: &nbsp9597393639</h4>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+</body>
+
+<script>
+  const toggleButton = document.getElementsByClassName('navbaricon')[0]
+  const navbarLinks = document.getElementsByClassName('navbar')[0]
+  toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+  })
+</script>
+<script>
+  window.addEventListener('scroll', reveal);
+  function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+    for (var i = 0; i < reveals.length; i++) {
+      var windowheight = window.innerHeight;
+      var revealtop = reveals[i].getBoundingClientRect().top;
+      var revealpoint = 150;
+
+      if (revealtop < windowheight - revealpoint) {
+        reveals[i].classList.add('activ');
+      }
+      else {
+        reveals[i].classList.remove('activ');
+      }
+    }
+  }
+</script>
+<script>
+  window.addEventListener('scroll', revealal);
+  function revealal() {
+    var reveals = document.querySelectorAll('.revealal');
+    for (var i = 0; i < reveals.length; i++) {
+      var windowheight = window.innerHeight;
+      var revealtop = reveals[i].getBoundingClientRect().top;
+      var revealpoint = 150;
+
+      if (revealtop < windowheight - revealpoint) {
+        reveals[i].classList.add('activer');
+      }
+      else {
+        reveals[i].classList.remove('activer');
+      }
+    }
+  }
+</script>
+
+
+<!-- ANIMATION JS FOR THE PAST sponsors SCROLL VIEW -->
+<script>
+  // Get all scroll elements
+  const scrollElements = document.querySelectorAll('.scroll');
+
+  // Add click event listeners
+  scrollElements.forEach(scroll => {
+    scroll.addEventListener('click', function (event) {
+      // Check if the clicked element is a span or an img
+      if (event.target.tagName === 'SPAN' || event.target.tagName === 'IMG') {
+        // Toggle the paused class
+        scroll.classList.toggle('paused');
+      } else {
+        // If clicked anywhere else in the scroll, continue animation
+        scroll.classList.remove('paused');
+      }
+    });
+  });
+</script>
+
+
+<script>
+  window.addEventListener('scroll', revealup);
+  function revealup() {
+    var reveals = document.querySelectorAll('.revealup');
+    for (var i = 0; i < reveals.length; i++) {
+      var windowheight = window.innerHeight;
+      var revealtop = reveals[i].getBoundingClientRect().top;
+      var revealpoint = 100;
+
+      if (revealtop < windowheight - revealpoint) {
+        reveals[i].classList.add('activeup');
+      }
+      else {
+        reveals[i].classList.remove('activeup');
+      }
+    }
+  }
+
+  window.addEventListener('load', function () {
+    const reveals = document.querySelectorAll('.reveal-head');
+    reveals.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add('active');
+      }, index * 150); // Delay the animation for each element
+    });
+  });
+
+
+</script>
+
+<script>
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('click', (e) => {
+      e.preventDefault();
+      setTimeout(() => radio.checked = !radio.checked, 0);
+    });
+  });
+
+  let radios = document.querySelectorAll('input[type="radio"]');
+  let currentIndex = 0;
+
+  function checkNextRadio() {
+    radios[currentIndex].checked = true;
+    currentIndex = (currentIndex + 1) % radios.length;
+  }
+
+  setInterval(checkNextRadio, 3500);
+</script>
+
+<script>
+  const counterElement = document.getElementById('counter');
+  const startValue = 0;
+  const endValue = 100000;
+  const duration = 1500;
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function formatNumber(number) {
+    return number.toString(); // Convert the number to a string without commas
+  }
+
+  function animateCounter(startTime) {
+    function updateCounter(timestamp) {
+      const elapsedTime = timestamp - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const currentValue = Math.floor(startValue + (endValue - startValue) * easedProgress);
+
+      counterElement.textContent = formatNumber(currentValue);
+
+      if (elapsedTime < duration) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counterElement.textContent = formatNumber(endValue);
+      }
+    }
+
+    requestAnimationFrame(updateCounter);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counterElement.textContent = formatNumber(startValue);
+        animateCounter(performance.now());
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  observer.observe(counterElement);
+
+
+</script>
+
+</html>

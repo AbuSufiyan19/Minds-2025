@@ -1,0 +1,130 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0b0c2a !important;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navcent {
+  top: 0 !important;
+  padding: 0 !important;
+}
+.navbar {
+  margin-right: 50px !important;
+}
+h1 {
+  margin-top: 80px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #047b91;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 50px auto;
+  color: #ffffff;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(15px);
+  -webkit-box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 12px rgba(96, 96, 96, 0.37);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+th {
+  color: #ddae2d;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sssss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+input {
+  color: #0b0c2a;
+  border: 1px solid #047b91;
+  padding: 8px 13px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.search-container i {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #047b91;
+  pointer-events: none;
+}
+
+@media (max-width: 500px) {
+  th,
+  td {
+    font-size: 12px;
+    padding: 7px;
+  }
+  table {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+th,
+  td {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar ul {
+    padding-left: 0;
+    text-align: center;
+  }
+  .navbar.active {
+    display: flex;
+    transform: translate(300px);
+    animation-duration: 2s;
+    transition: all 1s ease-in-out;
+    width: 150px;
+    height: 270px;
+    z-index: 20;
+  }
+}

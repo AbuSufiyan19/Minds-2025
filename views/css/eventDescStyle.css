@@ -1,0 +1,388 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    display: block !important;
+    background-color: #0B0C2A !important;
+
+}
+
+body::-webkit-scrollbar{
+    display: none;
+    
+}
+
+.agenda, .contact, .register, .team-size, .date, footer {
+    background: rgba(57, 57, 57, 0.189);
+    border-radius: 16px;
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(11.1px);
+    /* Animation */
+    animation: animate-border 4s linear infinite;
+}
+
+.container {
+    width: 100%;
+    padding: 20px 50px;
+    margin: 0 auto;
+}
+
+.header { 
+    margin-bottom: 40px;
+
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(0deg,  #047B91 0%, #2494A2 50%,#56BDA2 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.header p {
+    font-size: 1rem;
+    line-height: 1.6;
+    
+}
+
+.para-indent{
+    text-indent: 4rem;
+    text-align: justify;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+
+
+.social-container{
+    display: none;
+    margin-top: 20px;
+}
+
+.social-container i{
+    color: #ddae2d;
+    font-size: 16px;
+}
+
+.agenda {
+    flex: 3;
+    border-radius: 10px;
+    padding: 20px 50px;
+}
+
+.agenda::-webkit-scrollbar {
+    display: none;
+}
+
+.agenda h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    background: linear-gradient(0deg,  #047B91 0%, #2494A2 50%,#56BDA2 100%);
+    background-clip: text;
+    color: transparent;
+}
+.star{
+     color: #ddae2d !important;
+}
+.date {
+    align-items: center;
+}
+
+.date h3 {
+    font-size: 2rem;
+    margin: 0px;
+    background: linear-gradient(0deg,  #047B91 0%, #2494A2 50%,#56BDA2 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.date p{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.team-size h3{
+    background: linear-gradient(0deg,  #047B91 0%, #2494A2 50%,#56BDA2 100%);
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    margin-top: 11px;
+}
+
+.team-size p{
+    font-size: 1.3rem;
+    margin: 0;
+}
+.sessions .session {
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+.session p{
+    text-align: justify;
+    margin: auto;
+}
+.session-head{
+    margin-bottom: 5px;
+    margin-left: -30px;
+    font-weight: bold;
+}
+.event-mode{
+    color: #ddae2d;
+}
+ul li{
+    text-align: justify;
+}
+ol li{
+    text-align: justify;
+    margin: 0 25px;
+}
+
+.details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register {
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hidden {
+    display: none;
+}
+
+.register {
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Center text horizontally */
+}
+
+
+#button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#button-container.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#button-container button {
+    flex: 1;
+    padding: 0 10px; /* Adjust spacing between buttons */
+}
+
+.register.hide-text h2 {
+    opacity: 0;
+}
+
+.register h2 {
+    padding: 20px;
+    font-size: 1.5rem;
+    margin: 0;
+    background: linear-gradient(#DBB13B, #ddae2d);
+    background-clip: text;
+    color: transparent;
+}
+
+.closed{
+    background: linear-gradient(#db3b3b, #dd2d2d);
+}
+.closed h2{
+    color: white;
+}
+
+
+.closed h2:hover{
+    background: linear-gradient(#db3b3b, #dd2d2d) !important;
+    cursor: pointer; 
+    color: white;
+}
+
+.reg-buttons{
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: none;
+    border: none;
+    outline: none;
+    background: linear-gradient(#DBB13B, #ddae2d);
+    background-clip: text;
+    color: transparent;
+}
+
+.register h2:hover{
+    background: linear-gradient(#DBB13B, #ddae2d);
+    cursor: pointer; 
+    color: white;
+}
+
+.reg-buttons:hover{
+    background: linear-gradient(#DBB13B, #ddae2d);
+    height: 100%;
+    cursor: pointer;
+    color: white;
+}
+
+.register a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.btn-line{
+    height: 3rem;
+    width: .5px;
+    background-color: white;
+    animation: animate-border 5s linear infinite;
+}
+
+.info {
+    display: flex;
+    gap: 20px;
+}
+
+.info div {
+    flex: 1;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact h2{
+    margin: 0;
+    background: linear-gradient(0deg,  #047B91 0%, #2494A2 50%,#56BDA2 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.contact p{
+    font-size: 1.1rem;
+}
+
+footer {
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+footer h2{
+    background: linear-gradient(0deg,  #047B91 0%, #2494A2 50%,#56BDA2 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes animate-border {
+    0% {
+        box-shadow: 0 0 3px .5px #047B91, 0 0 0 .5px rgba(233, 195, 5, 0);
+    }
+    25% {
+        box-shadow: 0 0 3px .5px #56BDA2, 0 0 0 .5px rgba(255, 79, 79, 0);
+    }
+    50% {
+        box-shadow: 0 0 3px .5px #2494A2, 0 0 0 .5px rgba(249, 212, 35, 0);
+    }
+    75% {
+        box-shadow: 0 0 3px .5px #56BDA2, 0 0 0 .5px rgba(255, 79, 79, 0);
+    }
+    100% {
+        box-shadow: 0 0 3px .5px #047B91, 0 0 0 .5px rgba(249, 212, 35, 0);
+    }
+}
+
+marquee{
+    color: #DBB13B;
+}
+
+.marqueemob{
+    display: none;
+    color: #DBB13B;
+}
+
+@media (max-width: 768px) {
+    .container{
+        padding: 20px;
+    }
+    .main-content {
+        flex-direction: column;
+    }
+    .marqueemob{
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    marquee{
+        display: none;
+    }
+    .header h1{
+        margin-top: 10px;
+        font-size: 2.5rem;
+    }
+
+    .agenda,
+    .details {
+        flex: 1;
+    }
+
+    footer{
+        margin-top: 0;
+    }
+    .register{
+        background: linear-gradient(#DBB13B, #ddae2d);
+        color: white !important;
+    }
+    .closed{
+        background: linear-gradient(#db3b3b, #dd2d2d);
+        color: white !important;
+    }
+    .register h2 {
+
+        color: white !important;
+    }
+
+    .reg-buttons{
+        color: white;
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+    .contact {
+        margin-bottom: 20px;
+    }
+    .agenda{
+        padding: 20px 25px;
+    }
+    ol li{
+        margin: 0 15px;
+    }
+}

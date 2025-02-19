@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TRIPLE TROUBLE - LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/eventDescStyle.css">
+    <link rel="stylesheet" href="./css/navBar.css">
+    <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <%- include('notifications') %>
+    <%- include('navBar') %>
+    <div class="container vanta-bg-event">
+        <br><br>
+        <header class="header">
+            <h1> TRIPLE TROUBLE </h1>
+            <marquee class="marqueedesk" behavior="" direction=""> Triple up the fun, with trouble on the run </marquee>
+            <p class="marqueemob"> Triple up the fun, with trouble on the run </p>
+            <p class="para-indent">Get ready for Triple Trouble, an exhilarating event that combines teamwork, strategy, 
+                and agility across four thrilling challenges! Test your dexterity in the Balloon and Cup Challenge, where
+                you’ll stack and unstack cups using only a balloon. Show off your strategic skills and agility in the Tic
+                Tac Toe Challenge, blending physical tasks with classic gameplay. Navigate a maze blindfolded in the Rat 
+                in a Maze event, relying on team communication. Finally, embark on a puzzle-filled adventure in Riddle 
+                Rush, solving clues to uncover hidden treasures. Join us for a day packed with excitement and competition!</p>
+            <div class="social-container">
+                <i class="fa-regular fa-envelope"></i> &nbsp;20pw28@psgtech.ac.in<br />
+                <i class="fa-regular fa-envelope"></i> &nbsp;20pw12@psgtech.ac.in
+            </div>
+        </header>
+        <div class="main-content">
+            <div class="agenda">
+                <h2>Event Details</h2>
+
+                <div class="sessions">
+                    <div class="session">
+                        <span class="session-head">Round 1 :</span>
+                        <ul>
+                            <li>Kick off Triple Trouble with Round 1, featuring three exhilarating preliminary challenges!</li>
+                            <li>Test your teamwork in the Balloon and Cup Challenge by stacking and unstacking cups with a balloon under a 5-minute time limit.</li>
+                            <li>Show your agility in the Tic Tac Toe Challenge, where you'll complete physical tasks before making strategic moves.</li>
+                            <li>Finally, demonstrate communication skills in the Rat in a Maze event, guiding a blindfolded teammate through a maze.</li>
+                            <li>Compete for the fastest times and highest scores as you advance through these dynamic and fun preliminary rounds!</li>
+                        </ul>
+                    </div>
+                    <div class="session">
+                        <span class="session-head">Round 2 :</span>
+                        <ul>
+                            <li>The second round is the Final round of this competition in which teams dive into the ultimate challenge with our Escape and Hunt Adventure!</li>
+                            <li>In this exciting event, teams are locked inside a room and must solve a series of puzzles and challenges to uncover the key or clue that initiates the treasure hunt.</li>
+                            <li>Each solved challenge reveals a piece of a larger puzzle, which provides information about the next destination. </li>
+                            <li>As teams progress through each location, they collect additional puzzle pieces, gradually uncovering the final destination on the back of the completed puzzle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="register closed">
+                    <h2>Registration Closed</h2>
+                </div>
+                <div class="info">
+                    <div class="team-size">
+                        <h3>Team size:</h3>
+                        <p>2-3</p>
+                    </div>
+                    <div class="date">
+                        <h3>21-22</h3>
+                        <p>September 2024</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <p> RASHMI N S <br> 9384133686 </p>
+                    <p> JEEVICKHA K A <br> 9944082359 </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h2>Rules</h2>
+            <ol type="number">
+                <li>Each team must contain a maximum of 3 members.</li>
+                <li>In case of a tie-breaker, the team that completes the game first wins.</li>
+                <li>The leaderboard is used to determine the winner.</li>
+            </ol>
+        </footer>
+    </div>
+    <script>
+        function applyVantaBackground() {
+            const element = document.querySelector('.vanta-bg-event');
+
+            if (window.innerWidth > 600) {
+                VANTA.WAVES({
+                    el: ".vanta-bg-event",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: true,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x50519,
+                    shininess: 15.00,
+                    waveHeight: 20.00,
+                    waveSpeed: 0.30,
+                    zoom: 0.6
+                });
+            } else {
+                element.classList.remove('vanta-bg-event');
+            }
+        }
+
+        window.onload = applyVantaBackground;
+        window.onresize = applyVantaBackground;
+
+    </script>
+    <script src="./js/eventRegister.js"></script>
+    <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

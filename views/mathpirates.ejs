@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MATH PIRATES - LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/eventDescStyle.css">
+    <link rel="stylesheet" href="./css/navBar.css">
+    <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <%- include('notifications') %>
+        <%- include('navBar') %>
+            <div class="container vanta-bg-event">
+                <br><br>
+                <header class="header">
+                    <h1> MATH PIRATES </h1>
+                    <marquee class="marqueedesk" behavior="" direction=""> Hoist the anchor and set the sail for a math
+                        adventure! </marquee>
+                    <p class="marqueemob"> Hoist the anchor and set the sail for a math adventure! </p>
+                    <p class="para-indent">Do you want to explore the high seas and improve your math skills !?...
+                        Come join the math pirates crew, flaunt your quick wit and become the
+                        ultimate math pirate…from addition to navigation, our quiz will set
+                        you on a math adventure like no other!</p>
+
+                    <div class="social-container">
+                        <i class="fa-regular fa-envelope"></i> &nbsp;20pw16@psgtech.ac.in<br />
+                        <i class="fa-regular fa-envelope"></i> &nbsp;20pw23@psgtech.ac.in
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="agenda">
+                        <h2>Event Details</h2>
+
+                        <div class="sessions">
+                            <div class="session">
+                                <span class="session-head"> Round 1 : <span class="event-mode">Prelims</span></span>
+                                <ul>
+                                    <li>This round features a computer-based general math quiz, comprising questions that assess aptitude, reasoning, quick calculation skills, and general math intuition.</li>
+                                    <li>There will be 30 questions in total. </li>
+                                    <li>Each question carries 1 mark. <b>No negative marking.</b></li>
+                                    <li>The time duration for completing the test by each team will be noted and will be used in case of tie.</li>
+                                    <li><b>6 Teams</b> will be shortlisted for the next round.</li>
+                                </ul>
+                            </div>
+                            <div class="session">
+                                <span class="session-head"> Round 2 : <span class="event-mode">Finals</span></span>
+                                <ul>
+                                    <li>Has three sub rounds</li>
+                                    <ol class="event-mode">
+                                        <li>Roll 'n' Solve</li>
+                                        <li>Cipher Quest</li>
+                                        <li>Fast and furious.</li>
+                                    </ol>
+                                </ul>
+                                <ol>
+                                    <br>
+                                    <li> Roll 'n' Solve </li>
+                                    <ul>
+                                        <li>A total of 36 numbered tiles, ranging from (1,1) to (6,6), are presented. </li>
+                                        <li>Each player is required to roll the dice twice, and subsequently, solve the question situated beneath the tile that corresponds to the numbers obtained from the first and second rolls.</li>
+                                        <li>Throughout the quiz, each team will be allocated a total of six questions to answer.</li>
+                                        <li>Each correct answer is awarded 5 marks.</li>
+                                    </ul>
+                                    <br>
+                                    <li> Cipher Quest</li>
+                                    <ul>
+                                        <li>Upon uncovering a hidden QR Code beneath a set of 2x2 covered tiles, players will progressively answer a series of four questions.</li>
+                                        <li>Each answered question will serve as an input for the subsequent question, and upon answering each question, a corresponding tile will be flipped to reveal a portion of the QR Code.</li>
+                                        <li>Ultimately, the complete QR Code will be revealed, and players will be required to solve a fifth and final question by scanning the fully disclosed QR Code.</li>
+                                        <li>Each correct answer for the tile carries 5 marks, the question solved by scanning the QR carries 10 marks.</li>
+                                    </ul>
+                                    <br>
+                                    <li> Fast and Furious</li>
+                                    <ul>
+                                        <li>It is a rapid-fire round.</li>
+                                        <li>Each team will be given 1 minute to answer the questions.</li>
+                                        <li>For each correct answer 5 marks will be awarded</li>
+                                    </ul>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="register closed">
+                            <h2>Registration Closed</h2>
+                        </div>
+                        <div class="info">
+                            <div class="team-size">
+                                <h3>Team size:</h3>
+                                <p>2</p>
+                            </div>
+                            <div class="date">
+                                <h3>21-22</h3>
+                                <p>September 2024</p>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <h2>Contact</h2>
+                            <p> KARTHIK MANIAN S <br> 8610474908 </p>
+                            <p> PRADIKSHA P <br> 8870688757 </p>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <h2>Rules</h2>
+                    <ol type="number">
+                        <li> Smartphone usage is not allowed during the event.</li>
+                        <li> No need to bring calculators for either of the rounds. There won't be any questions which
+                            will
+                            require tedious calculations.</li>
+                        <li> Rough papers and pens for workout will be provided..</li>
+                    </ol>
+                </footer>
+            </div>
+            <script>
+                function applyVantaBackground() {
+                    const element = document.querySelector('.vanta-bg-event');
+
+                    if (window.innerWidth > 600) {
+                        VANTA.WAVES({
+                            el: ".vanta-bg-event",
+                            mouseControls: true,
+                            touchControls: true,
+                            gyroControls: true,
+                            minHeight: 200.00,
+                            minWidth: 200.00,
+                            scale: 1.00,
+                            scaleMobile: 1.00,
+                            color: 0x50519,
+                            shininess: 15.00,
+                            waveHeight: 20.00,
+                            waveSpeed: 0.30,
+                            zoom: 0.6
+                        });
+                    } else {
+                        element.classList.remove('vanta-bg-event');
+                    }
+                }
+
+                window.onload = applyVantaBackground;
+                window.onresize = applyVantaBackground;
+
+            </script>
+            <script src="./js/eventRegister.js"></script>
+            <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

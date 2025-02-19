@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WITTY MINDZ - LOGIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/eventDescStyle.css" />
+  <link rel="stylesheet" href="./css/navBar.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+  <%- include('notifications') %> <%- include('navBar') %>
+      <div class="container vanta-bg-event">
+        <br><br>
+        <header class="header">
+          <h1>WITTY MINDZ</h1>
+          <marquee class="marqueedesk" behavior="" direction="">
+            Expand Your Mental Horizons
+          </marquee>
+          <p class="marqueemob">Expand Your Mental Horizons</p>
+          <p class="para-indent">
+            WITTY MINDZ offers participants a platform to showcase their cognitive
+            agility and problem-solving skills through a series of engaging
+            challenges. This event promises to test participants intellect and
+            creativity, providing an exciting opportunity for them to demonstrate
+            their cognitive prowess.
+          </p>
+
+          <div class="social-container">
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx110@psgtech.ac.in<br />
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx214@psgtech.ac.in
+          </div>
+        </header>
+        <div class="main-content">
+          <div class="agenda">
+            <h2>Event Details</h2>
+
+            <div class="sessions">
+              <div class="session">
+                <span class="session-head">Round 1 : <span class="event-mode">Mind Maze(Prelims)</span></span><br /><br />
+                <ul>
+                  <li>In this round, participants will engage in challenges:</li>
+                  <ul>
+                    <li>
+                      <b> Solve a crossword puzzle</b> using the provided clues.
+                    </li>
+                    <li>
+                      <b>Technical word search</b> where participants find hidden
+                      technical terms in a grid.
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="session">
+                <span class="session-head">Round 2 : <span class="event-mode">Memorize and Recall (Prelims)</span></span><br /><br />
+                <ul>
+                  <li>
+                    In this round, participants will use their memory power:
+                  </li>
+                  <ul>
+                    <li>
+                      <b> Memorize details from an image</b> displayed for a
+                      limited time, then answer questions based on the image.
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="session">
+                <span class="session-head">Round 3 : <span class="event-mode">Decode Drama (Finals)</span></span><br /><br />
+                <ul>
+                  <li>This round combines wordplay and acting skills:</li>
+                  <ul>
+                    <li>
+                      Participants will <b>crack a jumbled word</b> related to
+                      computer science.
+                    </li>
+                    <li>
+                      One team member will then <b>act out the word</b> to their
+                      teammate, similar to "Dumb Charades."
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="details">
+            <div class="register closed">
+              <h2>Registration Closed</h2>
+            </div>
+            <div class="info">
+              <div class="team-size">
+                <h3>Team size:</h3>
+                <p>2</p>
+              </div>
+              <div class="date">
+                <h3>21-22</h3>
+                <p>September 2024</p>
+              </div>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <p>
+                HEMANTH KUMAR V <br />
+                7397268063
+              </p>
+              <p>
+                MAHALAKSHMI R <br />
+                9498413977
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <h2>Rules</h2>
+          <ol type="number">
+            <li>Each team consists of 2 members and mobile phones are not allowed.</li>
+            <li>Round 1: Time duration is 10 minutes.</li>
+            <li>Round 2: 15 teams will be shortlisted from round 1. Time duration is 20 minutes. </li>
+            <li>Round 3: 7 teams will be shortlisted from round 2. Each team has 10 minutes.</li>
+            <li>Each Team must adhere to the time limit for each round.</li>
+            <li>Fair play and sportsmanship are always expected.</li>
+            <li>Any form of misconduct will result in immediate disqualification.</li>
+            <li>The judge’s decision will be final.</li>
+          </ol>
+        </footer>
+      </div>
+      <script>
+        function applyVantaBackground() {
+          const element = document.querySelector(".vanta-bg-event");
+
+          if (window.innerWidth > 600) {
+            VANTA.WAVES({
+              el: ".vanta-bg-event",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: true,
+              minHeight: 200.0,
+              minWidth: 200.0,
+              scale: 1.0,
+              scaleMobile: 1.0,
+              color: 0x50519,
+              shininess: 15.0,
+              waveHeight: 20.0,
+              waveSpeed: 0.3,
+              zoom: 0.6,
+            });
+          } else {
+            element.classList.remove("vanta-bg-event");
+          }
+        }
+
+        window.onload = applyVantaBackground;
+        window.onresize = applyVantaBackground;
+      </script>
+      <script src="./js/eventRegister.js"></script>
+      <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

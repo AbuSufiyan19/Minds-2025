@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Registration</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+<body>
+    <%- include('notifications') %>
+    <div class="wrapper">
+        <div class="container">
+            <object data="./images/primaryanimatedlogo.svg" type="image/svg+xml" class="login-logo"></object>
+            <form id="registrationForm" method="POST" action="/alumnusRegister">
+                <div class="pbcontainer">
+                    <ul id="progressbar">
+                        <li class="active" id="section-1"><i class="fa-solid fa-user-check"></i></li>
+                        <li id="section-2"><i class="fas fa-id-card"></i></li>
+                        <li id="section-3"><i class="fa-solid fa-user-graduate"></i></li>
+                    </ul>
+                </div>
+                               
+                <div class="form-section active" id="section1">
+                    <div class="heading">Alumni Registration</div>
+                    <label for="emailAddress">Email Address</label>
+                    <div class="input-button-container">
+                        <input type="email" id="email" name="emailAddress" autofocus autocomplete="email" required placeholder="Enter your Email">
+                        <button type="button" onclick="sendVerificationEmail()">Send OTP</button>
+                    </div>
+                    <span id="emailError" class="error-message">error</span>
+                    <label for="otp">OTP</label>
+                    <div class="input-button-container">
+                        <input type="text" id="otp" name="otp" required placeholder="Enter OTP">
+                        <button type="button" onclick="verify()">Verify</button>
+                    </div>
+                    <span id="otpError" class="error-message"></span>
+                    
+                    <label for="alumnusCode">Alumni Code</label>
+                    <input type="text" id="alumnusCode" name="alumnusCode" required placeholder="Enter Alumni Code">
+                    <span id="alumnusCodeError" class="error-message"></span>
+                    <br>
+                    <p class="new-user">Registered Alumni List?<a href="/alumnusdetails" class="register-link">Click Here</a></p>
+                    <div class="bottom-buttons">
+                        <div class="dummy"></div>
+                        <button type="button" onclick="nextSection(1)">Next</button>
+                    </div>
+                    <p class="nethunt-msg">Upon successful registration, credentials for <span>Nethunt</span> will be sent via email.</p>
+                </div>
+
+                <div class="form-section" id="section2">
+                    <label for="rollNumber">Roll Number</label>
+                    <input type="text" id="rollNumber" name="rollNumber" required placeholder="Enter your Roll Number">
+                    <span id="rollNumberError" class="error-message"></span>
+
+                    <label for="alumnusName">Alumnus Name</label>
+                    <input type="text" id="alumnusName" name="alumnusName" required placeholder="Enter your Name">
+                    <span id="alumnusNameError" class="error-message"></span>
+
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span id="genderError" class="error-message"></span>
+
+                    <label for="contactNumber">Contact Number</label>
+                    <input type="text" id="contactNumber" name="contactNumber" required placeholder="Enter your Contact Number">
+                    <span id="contactNumberError" class="error-message"></span>
+
+                    <div class="bottom-buttons">
+                        <button type="button" onclick="previousSection(2)">Previous</button>
+                        <button type="button" onclick="nextSection(2)">Next</button>
+                    </div>
+                </div>
+
+                <div class="form-section" id="section3">
+                    <label for="foodPreference">Food Preference</label>
+                    <select id="foodPreference" name="foodPreference" required>
+                        <option value="">Select Food Preference</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Non-Vegetarian">Non-Vegetarian</option>
+                 
+                    </select>
+                    <span id="foodPreferenceError" class="error-message"></span>
+
+                    <label for="accommodationRequired">Accommodation Required?</label>
+                    <select id="accommodationRequired" name="accommodationRequired" required>
+                        <option value="">Select Option</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                    <span id="accommodationRequiredError" class="error-message"></span>
+                    <br>
+                    <p class="new-user" style="color: #ddae2d; font-weight: bold; line-height: 25px;">For Accommodation Related Queries</p>
+                    <p>Govind Raghavendran: &nbsp8925617246</p>
+                    <p>Keerthana S: &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp 9597393639</p>
+                    <br>
+
+                    <div class="bottom-buttons">
+                        <button type="button" onclick="previousSection(3)">Previous</button>
+                        <button id="submit" type="button" onclick="submitForm()">Register</button>
+                    </div>
+                    
+                </div>
+            </form>
+           
+        </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="./js/alumnusRegistration.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THINKLYTICS - LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/eventDescStyle.css">
+    <link rel="stylesheet" href="./css/navBar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <%- include('notifications') %>
+        <%- include('navBar') %>
+            <div class="container vanta-bg-event">
+                <br><br>
+                <header class="header">
+                    <h1>Thinklytics</h1>
+                    <marquee class="marqueedesk" behavior="" direction=""> Contemplate Data Differently! </marquee>
+                    <p class="marqueemob">Contemplate Data Differently! </p>
+                    <p class="para-indent">Are you a Data Abstractor? Are you ready to measure and manage the data? Are
+                        you seeking a platform to boost your critical thinking? Here is a fascinating event to explore
+                        your analytical skills. Questions will get you answers; Thinklytics will help you reach
+                        unattainable heights of insight. Open your eyes and prepare yourself to make the right choice.
+                        Seize the moment, friends! If not analyzed now, then when?</p>
+                    <div class="social-container">
+                        <i class="fa-regular fa-envelope"></i> &nbsp;23mx204@psgtech.ac.in<br />
+                        <i class="fa-regular fa-envelope"></i> &nbsp;23mx109@psgtech.ac.in
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="agenda">
+                        <h2>Event Details</h2>
+
+                        <div class="sessions">
+                            <div class="session">
+                                <span class="session-head">Round 1 :</span>
+                                <br><br>
+                                <ul>
+                                    <li>The questions will be in the form of multiple choice and consist of aptitude
+                                        questions.</li>
+                                    <li>Number of questions - 25.</li>
+                                    <li>The duration for Round 1 is 40 minutes.</li>
+                                    <li>The questions will test both your technical and analytical skills.</li>
+                                    <li>The top-ranked individuals or teams in this round will advance to the subsequent
+                                        round.</li>
+                                </ul>
+                            </div>
+                            <div class="session">
+                                <span class="session-head">Round 2 :</span>
+                                <br><br>
+                                <ul>
+                                    <li>Each team will be given a dataset and they need to interpret information from
+                                        the given dataset, visualize it using various tools. </li>
+                                    <li>
+                                        Participants are allowed to use their own Laptops, otherwise a system will be provided.
+                                    </li>
+                                    <li>Each team should prepare a presentation after performing the above tasks and
+                                        finding the key statistical facts. Presentation should be sent to the
+                                        coordinators before the mentioned time.</li>
+                                    <li>Minimum requirements: Measures of central tendency(Mean, Median and Mode),
+                                        Measures of dispersion and any two graphical representations of data(Bar graph,
+                                        Pie-Chart, Histogram etc.)</li>
+                                    <li>The duration for Round 2 is 120 minutes.</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="register closed">
+                            <h2>Registration Closed</h2>
+                        </div>
+                        <div class="info">
+                            <div class="team-size">
+                                <h3>Team size:</h3>
+                                <p>1 or 2</p>
+                            </div>
+                            <div class="date">
+                                <h3>21-22</h3>
+                                <p>September 2024</p>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <h2>Contact</h2>
+                            <p>HEMALATHA K<br>7339003898</p>
+                            <p>DIVYASHRI M<br>9345888393</p>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <h2>Rules</h2>
+                    <ol type="number">
+                        <li> Participation is open to individuals or teams of up to two members.</li>
+                        <li> Using a calculator or mobile phone is prohibited.</li>
+                        <li>The participants will be disqualified in case of malpractice.</li>
+                        <li>The decision of the judges will be final and will not be subjected to any change.</li>
+                    </ol>
+                </footer>
+            </div>
+            <script>
+                function applyVantaBackground() {
+                    const element = document.querySelector('.vanta-bg-event');
+
+                    if (window.innerWidth > 600) {
+                        VANTA.WAVES({
+                            el: ".vanta-bg-event",
+                            mouseControls: true,
+                            touchControls: true,
+                            gyroControls: true,
+                            minHeight: 200.00,
+                            minWidth: 200.00,
+                            scale: 1.00,
+                            scaleMobile: 1.00,
+                            color: 0x50519,
+                            shininess: 15.00,
+                            waveHeight: 20.00,
+                            waveSpeed: 0.30,
+                            zoom: 0.6
+                        });
+                    } else {
+                        element.classList.remove('vanta-bg-event');
+                    }
+                }
+
+                window.onload = applyVantaBackground;
+                window.onresize = applyVantaBackground;
+            </script>
+            <script src="./js/eventRegister.js"></script>
+            <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

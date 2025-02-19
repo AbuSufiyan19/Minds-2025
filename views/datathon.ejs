@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DATATHON - LOGIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/eventDescStyle.css">
+    <link rel="stylesheet" href="./css/navBar.css">
+    <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <%- include('notifications') %>
+    <%- include('navBar') %>
+    <div class="container vanta-bg-event">
+        <br><br>
+        <header class="header">
+            <h1> DATATHON </h1>
+            <marquee class="marqueedesk" behavior="" direction="">Insight Unleashed: Where Data Meets Brilliance!</marquee>
+            <p class="marqueemob">Insight Unleashed: Where Data Meets Brilliance!</p>
+            <p class="para-indent">We invite you to dive into the world of data with DATA-THON 2024, where your analytical mind
+                meets real-world challenges. This exhilarating competition is designed exclusively for postgraduate students
+                passionate about data science, analytics, and problem-solving. As you tackle a complex problem statement,
+                your team will analyze, innovate, and present cutting-edge solutions. Prepare to showcase your skills,
+                collaborate with like-minded peers, and crunch your way to the top. Get ready to transform raw data into
+                actionable insights and claim your spot as the ultimate data champion!</p>
+
+            <div class="social-container">
+                <i class="fa-regular fa-envelope"></i> &nbsp;20pd34@psgtech.ac.in<br />
+                <i class="fa-regular fa-envelope"></i> &nbsp;20pd16@psgtech.ac.in
+            </div>
+        </header>
+        <div class="main-content">
+            <div class="agenda">
+                <h2>Event Details</h2>
+
+                <div class="sessions">
+                    <div class="session">
+                        <span class="session-head">Round 1 :</span>
+                        <ul>
+                            <li><b>Description: </b>Participants will receive a problem statement. Teams will analyze the problem,
+                                derive insights from the data provided, develop a comprehensive solution, and submit their
+                                findings, including code, analysis, and visualizations. Teams must submit all their work within the allotted time.</li>
+                            <li><b>Submissions</b> will be
+                                evaluated based on creativity, different evaluation metrics and effectiveness of the solutions</li>
+                        </ul>
+                    </div>
+                    <div class="session">
+                        <span class="session-head">Round 2 :</span>
+                        <ul>
+                            <li>The teams are required to present their solutions with a clear and concise approach to addressing
+                                the problem statement in a brief presentation, limited to a maximum of 10 minutes.</li>
+                                <li>Following the presentations, a final evaluation will take place, during which the teams will be judged based
+                                on their solutions' effectiveness, creativity, and alignment with the problem’s objectives.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="register closed">
+                    <h2>Registration Closed</h2>
+                </div>
+                <div class="info">
+                    <div class="team-size">
+                        <h3>Team size:</h3>
+                        <p>2-3</p>
+                    </div>
+                    <div class="date">
+                        <h3>21-22</h3>
+                        <p>September 2024</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <p> SURYAA S V <br> 8870557306 </p>
+                    <p> MEENAKSHI S NAIR <br> 8590022669 </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h2>Rules</h2>
+            <ol type="number">
+                <li>Each team must have a maximum of 3 members and a minimum of 2 members.</li>
+                <li>Participants are responsible for bringing their own laptops, chargers, and any other necessary accessories.</li>
+                <li>All participants must be postgraduate students.</li>
+                <li>Participants must adhere to a professional code of conduct.</li>
+                <li>Plagiarism is strictly prohibited. All work submitted must be original and created by the team members.</li>
+                <li>Teams must submit their solutions by the deadline. Late submissions will not be accepted.</li>
+                <li>Participants can reach out to the organizers for any queries or clarifications.</li>
+            </ol>
+        </footer>
+    </div>
+    <script>
+        function applyVantaBackground() {
+            const element = document.querySelector('.vanta-bg-event');
+
+            if (window.innerWidth > 600) {
+                VANTA.WAVES({
+                    el: ".vanta-bg-event",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: true,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x50519,
+                    shininess: 15.00,
+                    waveHeight: 20.00,
+                    waveSpeed: 0.30,
+                    zoom: 0.6
+                });
+            } else {
+                element.classList.remove('vanta-bg-event');
+            }
+        }
+
+        window.onload = applyVantaBackground;
+        window.onresize = applyVantaBackground;
+
+    </script>
+    <script src="./js/eventRegister.js"></script>
+    <script src="./js/showNotification.js"></script>
+</body>
+
+</html>

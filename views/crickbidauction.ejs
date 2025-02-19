@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRICKBID AUCTIONS - LOGIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/eventDescStyle.css" />
+  <link rel="stylesheet" href="./css/navBar.css" />
+  <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+</head>
+
+<body>
+  <%- include('notifications') %> <%- include('navBar') %>
+      <div class="container vanta-bg-event">
+        <br><br>
+        <header class="header">
+          <h1>CRICKBID AUCTION</h1>
+          <marquee class="marqueedesk" behavior="" direction="">PICK YOUR DARING XI</marquee>
+          <p class="marqueemob">PICK YOUR DARING XI</p>
+          <p class="para-indent">
+            Get ready to immerse yourself in the exhilarating CrickBid Auction,
+            where strategy, cricket knowledge, and tactical expertise collide!
+            Test your wits with questions that cover the entire cricketing
+            spectrum—from historic milestones and player statistics to detailed
+            rules and the latest updates. Each correct answer brings you closer to
+            the ultimate cricketing showdown. The stakes are high, and every
+            choice could be pivotal in your quest for victory. Will your strategic
+            acumen propel you to the top, or will the competition outbid you in
+            this thrilling race for cricketing glory?
+          </p>
+          <div class="social-container">
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx306@psgtech.ac.in<br />
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx317@psgtech.ac.in
+          </div>
+        </header>
+        <div class="main-content">
+          <div class="agenda">
+            <h2>Event Details</h2>
+
+            <div class="sessions">
+              <div class="session">
+                <span class="session-head">Round 1 : <span class="event-mode">ONLINE</span></span>
+                <ul>
+                  <li>
+                    In the first round of the Cricket Auction, teams will
+                    participate in a quiz competition to secure their spot in the
+                    subsequent player auction phase.
+                  </li>
+                  <li>
+                    Each team will participate in a MCQ test conducted on an
+                    online platform, with questions covering various aspects of
+                    cricket, including history, rules, player statistics, and
+                    current events.
+                  </li>
+                  <li>
+                    The questions will test the team's knowledge and understanding
+                    of the sport.
+                  </li>
+                </ul>
+              </div>
+              <div class="session">
+                <span class="session-head">Round 2 : <span class="event-mode">OFFLINE</span></span>
+                <ul>
+                  <li>
+                    Teams will engage in a competitive bidding process to acquire
+                    the desired players within their budget constraints. They must
+                    carefully strategize to balance skill, value, and team
+                    composition while adhering to the specified player categories.
+                  </li>
+                  <li>
+                    At the conclusion of the auction, teams will be evaluated
+                    based on their adherence to the player requirements and the
+                    cumulative points of their selected squad.
+                  </li>
+                  <li>
+                    The team with the highest total points while meeting the
+                    specified criteria will emerge victorious an secure the top
+                    places in the competition.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="details">
+            <div class="register closed">
+              <h2>Registration Closed</h2>
+            </div>
+            <div class="info">
+              <div class="team-size">
+                <h3>Team size:</h3>
+                <p>3</p>
+              </div>
+              <div class="date">
+                <h3>19 - 21</h3>
+                <p>September 2024</p>
+              </div>
+            </div>
+            <div class="contact">
+              <h2>Contact</h2>
+              <p>
+                GOUTHAM H<br />
+                9345670926
+              </p>
+              <p>
+                NARESH KUMAR P <br />
+                9361169510
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <h2>Rules</h2>
+          <ol type="number">
+            <li>Each team must contain of 3 members.</li>
+            <li>
+              Ten Team will be shortlisted based on the
+              scores of the MCQ in the first round.
+            </li>
+            <li>Maximum of 4 overseas players allowed in the team.</li>
+            <li>
+              Each team will have a purse of 70 crores to spend in the auction.
+            </li>
+            <li>
+              Each player appearing in the auction will have their own points.
+            </li>
+            <li>
+              The team which has the highest total points will be declared as the
+              winner.
+            </li>
+            <li>
+              In case, if two teams have the same total points, the team with the
+              more money left in the purse will be declared as the winner.
+            </li>
+          </ol>
+        </footer>
+      </div>
+      <script>
+        function applyVantaBackground() {
+          const element = document.querySelector(".vanta-bg-event");
+
+          if (window.innerWidth > 600) {
+            VANTA.WAVES({
+              el: ".vanta-bg-event",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: true,
+              minHeight: 200.0,
+              minWidth: 200.0,
+              scale: 1.0,
+              scaleMobile: 1.0,
+              color: 0x50519,
+              shininess: 15.0,
+              waveHeight: 20.0,
+              waveSpeed: 0.3,
+              zoom: 0.6,
+            });
+          } else {
+            element.classList.remove("vanta-bg-event");
+          }
+        }
+
+        window.onload = applyVantaBackground;
+        window.onresize = applyVantaBackground;
+
+        
+      </script>
+      <script src="./js/eventRegister.js"></script>
+      <script src="./js/showNotification.js"></script>
+</body>
+
+</html>
