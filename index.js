@@ -49,14 +49,11 @@ app.use((req, res, next) => {
 const userRoutes = require('./Routes/userRoutes');
 const otproute = require('./Routes/verifyotp');
 const eventregistrationRoutes = require('./Routes/eventRegistration')
-const alumnusRoutes = require('./Routes/alumnusRoutes');
-
 
 
 app.use(userRoutes);
 app.use(otproute);
 app.use(eventregistrationRoutes);
-app.use(alumnusRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;  

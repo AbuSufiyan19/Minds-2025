@@ -48,9 +48,7 @@ router.get('/login', (req, res) => {
 router.get('/resetpassword', (req, res) => {
     res.render('resetpassword');
 });
-router.get('/ourpeople' ,(req,res) => {
-    res.render('ourpeople');
-});
+
 router.post('/checkuser', async (req, res) => {
     const { email, contactNumber } = req.body;
     try {
@@ -216,10 +214,6 @@ router.get('/logout', (req, res) => {
         res.redirect('/');
     });
 });
-router.get('/schedule', (req,res)=>{
-    const userId = req.session.userId;
-    res.render('schedule',{user:userId});
-})
 
 
 module.exports = router;

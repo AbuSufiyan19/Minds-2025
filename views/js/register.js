@@ -95,20 +95,6 @@ function previousSection(current) {
 }
 
 
-function updateProgressBar(current, next) {
-    const progressBarItems = document.querySelectorAll('#progressbar li');
-    
-    progressBarItems.forEach(item => item.classList.remove('active', 'completed'));
-
-    for (let i = 0; i < next; i++) {
-        if (i < next - 1) {
-            progressBarItems[i].classList.add('completed');
-        } else {
-            progressBarItems[i].classList.add('active');
-        }
-    }
-}
-
 function validateSection(section) {
     const inputs = section.getElementsByTagName('input');
     const selects = section.getElementsByTagName('select');
@@ -205,7 +191,6 @@ function verify(){
     const otpInput = document.getElementById('otp');
     const verifyOtpButton = otpInput.nextElementSibling;
     const otp = otpInput.value;
-    
 
     verifyOtpButton.disabled = true;
     verifyOtpButton.textContent = 'Verifying...';
@@ -248,13 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const rollNumber = document.getElementById('rollNumber');
     const gender = document.getElementById('gender');
     const contactNumber = document.getElementById('contactNumber');
-    const collegeName = document.getElementById('collegeName');
-    const degree = document.getElementById('degree');
-    const stream = document.getElementById('stream');
-    const yearOfStudy = document.getElementById('yearOfStudy');
 
     emailInput.addEventListener('input', function() {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const regex = /^24mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
         if (!regex.test(this.value)) {
             showError1(this, 'Please enter a valid email address.');
         } else {
@@ -296,36 +277,9 @@ document.addEventListener('DOMContentLoaded', function() {
             genderflag=1;
         }
     });
-    degree.addEventListener('change', function() {
-        if (this.value === '') {
-            showError(this, 'Please select a degree.');
-        } else {
-            hideError(this);
-        }
-    });
-    stream.addEventListener('change', function() {
-        if (this.value === '') {
-            showError(this, 'Please select a stream.');
-        } else {
-            hideError(this);
-        }
-    });
-    yearOfStudy.addEventListener('change', function() {
-        if (this.value === '') {
-            showError(this, 'Please select a yearofstudy.');
-        } else {
-            hideError(this);
-        }
-    });
-    collegeName.addEventListener('change', function() {
-        if (this.value === '') {
-            showError(this, 'Please select College.');
-        } else {
-            hideError(this);
-        }
-    });
+    
     rollNumber.addEventListener('input', function() {
-        const regex = /^[a-zA-Z0-9]*$/;
+        const regex = /^24m[xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)$/;
         if (!regex.test(this.value)) {
             showError(this, 'Roll number should only contain letters and numbers.');
             rollflag=0;
@@ -404,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const registerButton = event.target.querySelector('button[type="submit"]');
 
         
-        if (validateSection(document.getElementById('section3'))) {
+        if (validateSection(document.getElementById('section2'))) {
             const formData = new FormData(event.target);
             const formObject = Object.fromEntries(formData.entries());
 
