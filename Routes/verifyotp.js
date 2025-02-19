@@ -22,27 +22,27 @@ const transporter = nodemailer.createTransport({
 router.post('/send-otp', async (req, res) => {
     try {
         const { email, subject,htmlContent } = req.body;
-
+        
         const exists = await User.findOne({ email });
-
+        
         if (exists) {
             console.log('Sending "Already registered" response');
             return res.status(400).json({ message: 'Already registered' });
         }
-
+        
         const otp = Math.floor(100000 + Math.random()*900000).toString();
         otpStore[email] = otp;
-
+        
         // Replace {{otp}} placeholder with the actual OTP in the HTML content
         const finalHtmlContent = htmlContent.replace('{{otp}}', otp);
-
+        
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: email,
             subject: subject,
             html: finalHtmlContent
         };
-
+        console.log(mailOptions);
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 return res.status(500).json({ message: 'Error sending email', error });

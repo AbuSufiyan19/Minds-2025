@@ -130,7 +130,7 @@ function sendVerificationEmail() {
     const sendOtpButton = emailInput.nextElementSibling;
     const email = emailInput.value;
      
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regex = /^23mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
 
 
     if (!regex.test(email)) {
@@ -149,17 +149,17 @@ function sendVerificationEmail() {
         },
         body: JSON.stringify({ 
             email,
-            subject: 'Your Login 2024 OTP Verification Code',
+            subject: 'Your Minds 2025 OTP Verification Code',
             htmlContent: `
             <p>Dear Participant,</p>
-            <p>Welcome to Login-2024</p>
+            <p>Welcome to Minds-2025</p>
             <p>To proceed, please use the following One-Time Password (OTP):</p>
             <p>Your OTP code is <strong>{{otp}}</strong></p>
             <p>This OTP is valid for the next <strong>10 minutes</strong>. Please do not share this code with anyone.</p>
-            <p>If you have any queries or need assistance, please feel free to reach out to us at login@psgtech.ac.in</p>
+            <p>If you have any queries or need assistance, please feel free to reach out to us at minds@psgtech.ac.in</p>
             <p><strong>Best regards,</strong><br>
             Registration Team<br>
-            Login-2024<br>
+            Minds-2025<br>
             </p>
             `  
         })
