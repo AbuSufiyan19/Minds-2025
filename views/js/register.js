@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactNumber = document.getElementById('contactNumber');
 
     emailInput.addEventListener('input', function() {
-        const regex = /^24mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
+        const regex = /^23mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
         if (!regex.test(this.value)) {
             showError1(this, 'Please enter a valid email address.');
         } else {
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     rollNumber.addEventListener('input', function() {
-        const regex = /^24m[xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)$/;
+        const regex = /^23m[xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)$/;
         if (!regex.test(this.value)) {
             showError(this, 'Roll number should only contain letters and numbers.');
             rollflag=0;
