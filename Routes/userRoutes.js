@@ -123,16 +123,15 @@ router.post('/register', async (req, res) => {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: email,
-            subject: 'Welcome to Login-2024 - Successfully Registered',
+            subject: 'Welcome to Minds-2025 - Successfully Registered',
             html: `
             <p>Dear ${req.body.studentName},</p>
-            <p>Thank you for registering for <strong>Login - 2024</strong>. Your account has been successfully created.</p>
-            <p><strong>Login - 2024</strong> takes place on <strong>September 21 & 22, 2024</strong>. Be sure to check the schedule and register for the events you're interested in.</p>
-            <p>To get started, please login to our website at <a href="https://psglogin.in" style="color:rgb(0, 115, 255);">www.psglogin.in</a></p>
+            <p>Thank you for registering for <strong>Minds - 2025</strong>. Your account has been successfully created.</p>
+            <p><strong>Minds - 2025</strong> takes place on <strong>February 27, 28 & March 1, 2025</strong>.Please check and register for the events you're interested in.</p>
 
             <h3>Next Steps:</h3>
             <ol>
-                <li><strong>Explore Events:</strong> Learn more about each event, including their descriptions, participation details and the schedule.</li>
+                <li><strong>Explore Events:</strong> Learn more about each event, including their descriptions, participation details.</li>
                 <li><strong>Register for Events:</strong>
                     <ul>
                         <li><strong>Individual Events:</strong> Select the events you'd like to participate in and complete the registration process.</li>
@@ -143,22 +142,11 @@ router.post('/register', async (req, res) => {
 
             <p>You will receive a confirmation email for each successful registration.</p>
             <p>We are thrilled to have you as a part of our symposium community and look forward to your active participation. If you have any queries or need assistance, please don't hesitate to reach out to us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:rgb(0, 115, 255);">${process.env.EMAIL_CONTACT}</a>.</p>
-            <img src="https://i.imgur.com/lrlPoGi.png" alt="Login - 2024" style="width: 280px;">
+            
             <br>
             <p><strong>Best regards,</strong><br>
                 Registration Team <br>
-                Login - 2024</p>
-
-            <hr>
-            <div style="width: 100%; text-align: center;">
-                <a href="https://psgtech.in"><img src="https://i.imgur.com/JQIgh6Y.png" alt="Login - 2024" style="width: 200px;"></a>
-                <p><strong>Hey, do you follow us on social media?</strong></p>
-                <a href="https://www.instagram.com/loginpsgtech/"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" style="width: 40px;"></a>
-                &nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/login-psg-tech/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linked In" style="width: 40px;"></a>
-                <p>Follow us to get the latest updates on events, announcements, and more.</p>
-            </div>
-            <hr>
+                Minds - 2025</p>
             `
             
         };

@@ -158,55 +158,34 @@ router.post('/eventReg', async (req, res) => {
         var HTMLContent, subContent;
         if (teamSize > 1) {
 
-            subContent = `Login-2024 Team Registration successful for ${sanitizedEventName} - Login 2024`
+            subContent = `Minds-2025 Team Registration successful for ${sanitizedEventName} - Minds 2025`
             HTMLContent = `
                 <p>Dear ${user.studentName},</p>
-                <p>Congratulations! You’ve successfully created a team and registered for the event ${sanitizedEventName} at Login - 2024.</p>
+                <p>Congratulations! You’ve successfully created a team and registered for the event ${sanitizedEventName} at Minds - 2025.</p>
                 <p>Please share your team code <strong>${teamId}</strong> with your teammates so they can join your team and complete their registration.</p>
                 <p>Also note that the minimum number of members required for your team to participate in this event is <strong>${minSize}</strong>. Ensure your team meets this requirement before the event.</p>
                 <p>Do ensure that all team members are available to participate during the event. We look forward to your participation and wish you the best of luck!</p>
                 <p>Event Date: <strong>${eDate}</strong> </p>
-                <p>Don't forget to explore and participate in other exciting events at <a href="https://psglogin.in/#events-section">Login - 2024</a> to make the most of your experience!</p>
+                <p>Don't forget to explore and participate in other exciting events to make the most of your experience!</p>
                 <p>If you’ve any questions or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
-                <img src=${imgUrl} alt="Event poster" style="width: 300px;"><br>
                 <p><strong>Best regards,</strong><br>
                 Registration Team<br>
-                Login-2024</p>
-                <hr>
-                <div style="width: 100%; text-align: center;">
-                    <a href="https://psgtech.in"><img src="https://i.imgur.com/JQIgh6Y.png" alt="Login - 2024" style="width: 200px;"></a>
-                    <p><strong>Hey, do you follow us on social media?</strong></p>
-                    <a href="https://www.instagram.com/loginpsgtech/"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" style="width: 40px;"></a>
-                    &nbsp;&nbsp;
-                    <a href="https://www.linkedin.com/company/login-psg-tech/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linked In" style="width: 40px;"></a>
-                    <p>Follow us to get the latest updates on events, announcements, and more.</p>
-                </div>
-                <hr>
+                Minds-2025</p>
                 `
         } else {
-            subContent = `Login-2024 Event Registration Confirmation for ${sanitizedEventName} - Login 2024`
+            subContent = `Minds-2025 Event Registration Confirmation for ${sanitizedEventName} - Minds 2025`
             HTMLContent = `
                 <p>Dear ${user.studentName},</p>
-                <p>Congratulations! You’ve successfully registered for the event <strong>${sanitizedEventName}</strong> at <strong>Login - 2024</strong>.<br>
+                <p>Congratulations! You’ve successfully registered for the event <strong>${sanitizedEventName}</strong> at <strong>Minds - 2025</strong>.<br>
                 <p>Please be available to participate during the event. We look forward to your participation and wish you the best of luck!</p>
                 <p>Event Date: <strong>${eDate}</strong> </p>
-                <p>Don't forget to explore and participate in other exciting events at <a href="https://psglogin.in/#events-section">Login - 2024</a> to make the most of your experience!</p>
+                <p>Don't forget to explore and participate in other exciting events of Minds - 2025</a> to make the most of your experience!</p>
                 <p>If you’ve any questions or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
-                <img src=${imgUrl} alt="Event poster" style="width: 300px;"><br>
                 <p><strong>Best regards,</strong><br>
                 Registration Team<br>
-                Login-2024
+                Minds-2025
                 </p>
-                <hr>
-                <div style="width: 100%; text-align: center;">
-                    <a href="https://psgtech.in"><img src="https://i.imgur.com/JQIgh6Y.png" alt="Login - 2024" style="width: 200px;"></a>
-                    <p><strong>Hey, do you follow us on social media?</strong></p>
-                    <a href="https://www.instagram.com/loginpsgtech/"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" style="width: 40px;"></a>
-                    &nbsp;&nbsp;
-                    <a href="https://www.linkedin.com/company/login-psg-tech/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linked In" style="width: 40px;"></a>
-                    <p>Follow us to get the latest updates on events, announcements, and more.</p>
-                </div>
-                <hr>
+
                 `
         }
         const mailOptions = {
@@ -448,30 +427,19 @@ router.post('/joinevent', async (req, res) => {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: user.email,
-            subject: `Successfully Joined Team for ${sanitizedEventName} - Login 2024`,
+            subject: `Successfully Joined Team for ${sanitizedEventName} - Minds 2025`,
             html: `
             <p>Dear ${user.studentName},</p>
-            <p>You’ve successfully joined your team for the event <strong>${sanitizedEventName}</strong> using the team code <strong>${teamId}</strong> at <strong>Login-2024</strong>.</p>
+            <p>You’ve successfully joined your team for the event <strong>${sanitizedEventName}</strong> using the team code <strong>${teamId}</strong> at <strong>Minds-2025</strong>.</p>
             <p>Thank you for being a part of this exciting event! Please coordinate with your team to prepare for the competition, and ensure everyone is ready for the big day.</p>
             <p>Also note that the minimum number of members required for your team to participate in this event is <strong>${minSize}</strong>. Ensure your team meets this requirement before the event.</p>
             <p>Please ensure that all team members participate in the event. We look forward to your active participation and wish you the best of luck!</p>
             <p>Event Date: <strong>${eDate}</strong></p>
-            <p>Don't forget to explore and participate in other exciting events at <a href="https://psglogin.in/#events-section">Login - 2024</a> to make the most of your experience!</p>
+            <p>Don't forget to explore and participate in other exciting events of Minds - 2025</a> to make the most of your experience!</p>
             <p>If you’ve any queries or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
-            <img src=${imgUrl} alt="Event Poster" style="width: 300px;"><br>
             <p><strong>Best regards,</strong><br>
             Registration Team<br>
-            Login-2024</p>  
-            <hr>
-            <div style="width: 100%; text-align: center;">
-                <a href="https://psgtech.in"><img src="https://i.imgur.com/JQIgh6Y.png" alt="Login - 2024" style="width: 200px;"></a>
-                <p><strong>Hey, do you follow us on social media?</strong></p>
-                <a href="https://www.instagram.com/loginpsgtech/"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" style="width: 40px;"></a>
-                &nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/login-psg-tech/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linked In" style="width: 40px;"></a>
-                <p>Follow us to get the latest updates on events, announcements, and more.</p>
-            </div>
-            <hr>
+            Minds-2025</p>  
             `
         };
         transporter.sendMail(mailOptions);
@@ -566,25 +534,15 @@ router.delete('/delete/:schemaName/:teamId', async (req, res) => {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: email,
-            subject: `Cancellation of Registration for ${sanitizedEventName} - Login-2024`,
+            subject: `Cancellation of Registration for ${sanitizedEventName} - Minds-2025`,
             html: `
             <p>Dear ${name},</p>
-            <p>We’ve received your request to cancel your registration for the <strong>${sanitizedEventName}</strong> at the <strong>Login-2024</strong></p>
+            <p>We’ve received your request to cancel your registration for the <strong>${sanitizedEventName}</strong> at the <strong>Minds-2025</strong></p>
             <p>Your registration has been successfully cancelled. We’re sorry to hear that you won’t be able to join us this time. If there is anything we can do to assist you or if you have any further queries, please do not hesitate to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue;">${process.env.EMAIL_CONTACT}</a>.</p><br>
             <p>We hope to see you in future events.</p>
             <p><strong>Best regards,</strong><br>
             Registration Team<br>
-            Login-2024</p>
-            <hr>
-            <div style="width: 100%; text-align: center;">
-                <a href="https://psgtech.in"><img src="https://i.imgur.com/JQIgh6Y.png" alt="Login - 2024" style="width: 200px;"></a>
-                <p><strong>Hey, do you follow us on social media?</strong></p>
-                <a href="https://www.instagram.com/loginpsgtech/"><img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" style="width: 40px;"></a>
-                &nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/login-psg-tech/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linked In" style="width: 40px;"></a>
-                <p>Follow us to get the latest updates on events, announcements, and more.</p>
-            </div>
-            <hr>
+            Minds-2025</p>
             `
         };
 

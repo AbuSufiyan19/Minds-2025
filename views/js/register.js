@@ -209,19 +209,23 @@ function verify(){
             showNotification('OTP verified successfully',true);
             document.getElementById('otpError').textContent = data.message;
             verifyflag=1;
+            verifyOtpButton.textContent = 'Verified';
             document.getElementById('email').readOnly = true;
             document.getElementById('otp').readOnly = true;
 
         } else { 
             showNotification('OTP verification failed',false);
             document.getElementById('otpError').textContent = data.message;
+            verifyOtpButton.disabled = false;
+            verifyOtpButton.textContent = 'Verify';
         }
     })
-    .catch(error => console.error('Error:', error))
-    .finally(() => {
+    .catch(error => {
+        console.error('Error:', error);
+        showNotification('An error occurred. Please try again.', false);
         verifyOtpButton.disabled = false;
         verifyOtpButton.textContent = 'Verify';
-    }); 
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -279,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     rollNumber.addEventListener('input', function() {
-        const regex = /^23m[xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)$/;
+        const regex = /^23[mM][xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)$/;
         if (!regex.test(this.value)) {
             showError(this, 'Roll number should only contain letters and numbers.');
             rollflag=0;
