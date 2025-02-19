@@ -6,15 +6,16 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/MindsLogowhitefin.png" type="image/x-icon">
 
 </head>
 <body>
     <%- include('notifications') %>
     <div class="wrapper">
         <div class="container">
-            <object data="./images/primaryanimatedlogo.svg" type="image/svg+xml" class="login-logo"></object>
-            <div class="heading">Sign In</div>
+            <!-- <object data="./images/primaryanimatedlogo.svg" type="image/svg+xml" class="login-logo"></object> -->
+             <img src="./images/MindsLogowhitefin.png" alt="Minds 2025" class="login-logo">
+            <!-- <div class="heading">Sign In</div> -->
 
             <form id="loginForm" action="/login" method="POST">
                 <label for="email">Email</label>
@@ -32,7 +33,7 @@
                 <span id="passwordError" class="error-message">error</span>
                 
                 <button type="submit" class="login-btn">Login</button>
-                <!-- <p class="new-user">Haven't Registered yet?<a href="/register" class="register-link">Register</a></p> -->
+                <p class="new-user">Haven't Registered yet?<a href="/register" class="register-link">Register</a></p>
                 <p class="new-user">Forgot Password?<a href="/resetpassword" class="register-link">Reset</a></p>
             </form>
         </div>
