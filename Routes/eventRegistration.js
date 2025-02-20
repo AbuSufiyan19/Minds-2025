@@ -47,7 +47,7 @@ async function generateUniqueTeamId(event) {
         'Datathon': 'DN',
         'LastStandRacing': 'LR',
         'LastStandValorant': 'LV',
-        'MathPirates': 'MP',
+        'AlgoVenture': 'AV',
         'NetHunt': 'NT',
         'PicturePerfect': 'PP',
         'Techiadz': 'TZ',
@@ -256,7 +256,7 @@ const eventPrefixes = {
     'DN': 'Datathon',
     'LR':'LastStandRacing',
     'LV':'LastStandValorant',
-    'MP': 'MathPirates',
+    'AV': 'AlgoVenture',
     'NT': 'NetHunt',
     'PP': 'PicturePerfect',
     'TZ': 'Techiadz',
@@ -270,7 +270,7 @@ const eventTeamSize = {
     'CodeSprint': 1,
     'CrickBidAuction': 3,
     'Datathon': 3,
-    'MathPirates': 2,
+    'AlgoVenture': 2,
     'LastStandRacing' : 1,
     'LastStandValorant':5,
     'NetHunt': 1,
@@ -286,7 +286,7 @@ const eventMinTeamSize = {
     'CodeSprint': 1,
     'Datathon': 2,
     'LastStand': 1,
-    'MathPirates': 2,
+    'AlgoVenture': 2,
     'LastStandRacing' : 1,
     'LastStandValorant': 1,
     'NetHunt': 1,
@@ -595,9 +595,9 @@ router.get('/laststand', (req, res) => {
     res.render('laststand', { user: userId });
 });
 
-router.get('/mathpirates', (req, res) => {
+router.get('/algoventure', (req, res) => {
     const userId = req.session.userId;
-    res.render('mathpirates', { user: userId });
+    res.render('algoventure', { user: userId });
 });
 
 router.get('/nethunt', (req, res) => {

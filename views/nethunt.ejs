@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NETHUNT - LOGIN</title>
+  <title>NETHUNT - MINDS</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/0d2dab4ce0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/eventDescStyle.css" />
   <link rel="stylesheet" href="./css/navBar.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-  <link rel="shortcut icon" href="/images/loginPrimaryLogo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/MindsLogowhitefin.png" type="image/x-icon">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
           </p>
           <div class="social-container">
             <i class="fa-regular fa-envelope"></i> &nbsp;23mx321@psgtech.ac.in<br />
-            <i class="fa-regular fa-envelope"></i> &nbsp;23mx228@psgtech.ac.in
+            <i class="fa-regular fa-envelope"></i> &nbsp;23mx320@psgtech.ac.in
           </div>
         </header>
         <div class="main-content">
@@ -55,8 +55,8 @@
                   <li>
                     For every image:
                     <ul style="margin-left: 20px;">
-                      <li>First clue appears after 50 hits.</li>
-                      <li>Second clue appears after 100 hits.</li>
+                      <li>First clue appears after 25th attempt.</li>
+                      <li>Second clue appears after 50th attempt.</li>
                     </ul>
                   </li>
                   <li>
@@ -69,19 +69,19 @@
                     Example: "Net-Hunt" must be entered as "nethunt", "1" must be
                     entered as "one".
                   </li>
-                  <li><strong>Visit the website:</strong>
+                  <!-- <li><strong>Visit the website:</strong>
                     <ul style="margin-left: 20px;">
                       <li>For candidates: <a href="https://nethunt.candidate.psglogin.in/login" rel="noopener noreferrer" target="_blank" style="color:#0676ed;">Click Here</a></li>
                       <li>For alumnus: <a href="https://nethunt.alumni.psglogin.in/login" rel="noopener noreferrer" target="_blank" style="color:#0676ed;">Click Here</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
           </div>
           <div class="details">
-            <div class="register closed">
-              <h2>Registration Closed</h2>
+            <div class="register">
+              <h2>Register Here!</h2>
             </div>
             <div class="info">
               <div class="team-size">
@@ -100,8 +100,8 @@
                 9789424077
               </p>
               <p>
-                VIJAY KEERTHY S <br />
-                7806974480
+                Praveen Y <br />
+                9629459133
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@
               credentials.
             </li>
             <li>Students with invalid credentials will be disqualified.</li>
-            <li>Winners will be announced during the valedictory ceremony.</li>
+            <li>Winners will be announced after vaildation.</li>
           </ol>
         </footer>
       </div>
@@ -158,6 +158,11 @@
 
         window.onload = applyVantaBackground;
         window.onresize = applyVantaBackground;
+
+        document.querySelector('.register h2').addEventListener('click', function(){
+            register('NetHunt');
+        });
+
       </script>
       <script src="./js/eventRegister.js"></script>
       <script src="./js/showNotification.js"></script>
