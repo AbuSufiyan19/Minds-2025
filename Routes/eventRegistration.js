@@ -44,7 +44,7 @@ async function generateUniqueTeamId(event) {
         'AlgoCode': 'AC',
         'CodeSprint': 'CS',
         'CrickBidAuction': 'CB',
-        'Datathon': 'DN',
+        'DesignX': 'DX',
         'LastStandRacing': 'LR',
         'LastStandValorant': 'LV',
         'AlgoVenture': 'AV',
@@ -240,7 +240,7 @@ const eventPrefixes = {
     'AC': 'AlgoCode',
     'CS': 'CodeSprint',
     'CB': 'CrickBidAuction',
-    'DN': 'Datathon',
+    'DX': 'DesignX',
     'LR':'LastStandRacing',
     'LV':'LastStandValorant',
     'AV': 'AlgoVenture',
@@ -256,7 +256,7 @@ const eventTeamSize = {
     'AlgoCode': 2,
     'CodeSprint': 1,
     'CrickBidAuction': 3,
-    'Datathon': 3,
+    'DesignX': 1,
     'AlgoVenture': 2,
     'LastStandRacing' : 1,
     'LastStandValorant':5,
@@ -271,7 +271,7 @@ const eventMinTeamSize = {
     'AlgoCode': 2,
     'CrickBidAuction': 3,
     'CodeSprint': 1,
-    'Datathon': 2,
+    'DesignX': 1,
     'LastStand': 1,
     'AlgoVenture': 2,
     'LastStandRacing' : 1,
@@ -597,9 +597,9 @@ router.get('/pictureperfect', (req, res) => {
     res.render('pictureperfect', { user: userId });
 });
 
-router.get('/staroflogin', (req, res) => {
+router.get('/mindscrown', (req, res) => {
     const userId = req.session.userId;
-    res.render('staroflogin', { user: userId });
+    res.render('mindscrown', { user: userId });
 });
 
 router.get('/techiadz', (req, res) => {
@@ -607,9 +607,9 @@ router.get('/techiadz', (req, res) => {
     res.render('techiadz', { user: userId });
 });
 
-router.get('/thinklytics', (req, res) => {
+router.get('/designx', (req, res) => {
     const userId = req.session.userId;
-    res.render('thinklytics', { user: userId });
+    res.render('designx', { user: userId });
 });
 
 router.get('/tripletrouble', (req, res) => {

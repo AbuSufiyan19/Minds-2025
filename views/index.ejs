@@ -46,7 +46,7 @@
             <h5>Proudly Presents</h5><br><br>
             <div class="logintext">
               <!-- <object data="./images/primaryanimatedlogo.svg" type="image/svg+xml"></object> -->
-               <img src="./images/MindsLogowhitefin.png" alt="Minds" >
+              <img src="./images/MindsLogowhitefin.png" alt="Minds">
             </div><br>
             <div class="buttttons">
               <% if(!user) { %>
@@ -68,10 +68,10 @@
     </section>
     <div class="price-container revealup">
       <div class="prizepool">
-        <img src="images/rupee.png" alt="Rupees" />
-        <span id="counter">0</span>
+        
+        <!-- <img src="images/rupee.png" alt="Rupees" /> -->
+        <span id="counter">Win Exciting Prizes!!!</span>
       </div>
-      <p class="prize-text">Worth Prize Pool</p>
       <p class="exclusive">Intra Department Technical Fest</p>
       <!-- <p class="exclusive-pg"><span>Note: </span>Only M.E., MCA, M.Sc., M.Tech., M.Com., and M.A. students can register
         and participate.</p> -->
@@ -87,9 +87,13 @@
         <div class="about revealup">
           <h1>What is MINDS?</h1>
           <div class="abouttext">
-            <p> <b> MINDS 2025</b>, the XXrd edition of the prestigious technical symposium, is proudly organized by the Computer Applications Association. This event is dedicated to fostering technical excellence, creativity, and collaboration among students.
-              Scheduled for the Feb 28 & Mar 1, <b> MINDS 2025</b> invites junior students to engage in a dynamic experience of technical and non-technical events.
-              Join us as we refine, recognize, and reward emerging talents, celebrating their passion for technology and innovation.
+            <p> <b> MINDS 2025</b>, the XXrd edition of the prestigious technical symposium, is proudly organized by the
+              Computer Applications Association. This event is dedicated to fostering technical excellence, creativity,
+              and collaboration among students.
+              Scheduled for the Feb 28 & Mar 1, <b> MINDS 2025</b> invites junior students to engage in a dynamic
+              experience of technical and non-technical events.
+              Join us as we refine, recognize, and reward emerging talents, celebrating their passion for technology and
+              innovation.
             </p>
 
           </div>
@@ -111,6 +115,25 @@
             <div class="rows">
               <div class="cardss revealal">
                 <div class="card-img">
+                  <img src="images/AlgoVenture.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">AlgoVenture</h6>
+                  <h6 class="secondary-text">Hunt the Clues, Build the Logic, Code to Victory!</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/algoventure'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Online</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Technical</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cardss">
+                <div class="card-img">
                   <img src="images/CodeSprint.png">
                 </div>
                 <div class="desc">
@@ -128,7 +151,32 @@
                 </div>
               </div>
 
-              <div class="cardss">
+              <div class="cardss reveal">
+                <div class="card-img">
+                  <img src="images/DesignX.png">
+                </div>
+                <div class="desc">
+                  <h6 class="primary-text">DesignX</h6>
+                  <h6 class="secondary-text">XXXXX</h6>
+                </div>
+                <button class="primary-text" onclick="window.location.href='/designx'">Explore More</button>
+                <div class="details">
+                  <div class="rating">
+                    <h6 class="secondary-text">Hybrid</h6>
+                  </div>
+                  <div class="activity">
+                    <h6 class="secondary-text">Non-Technical</h6>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Row 2 -->
+            <div class="rows">
+
+              <div class="cardss revealal">
                 <div class="card-img">
                   <img src="images/NetHunt.png">
                 </div>
@@ -168,24 +216,26 @@
 
             </div>
 
-
-            <!-- Row 2 -->
             <div class="rows">
-              <div class="cardss revealal">
-                <div class="card-img">
-                  <img src="images/AlgoVenture.png">
+              <div class="cardsstar">
+                <div class="cardstar-img">
+                  <img src="images/StarOfLogin.png">
                 </div>
                 <div class="desc">
-                  <h6 class="primary-text">AlgoVenture</h6>
-                  <h6 class="secondary-text">Hunt the Clues, Build the Logic, Code to Victory!</h6>
+                  <h6 class="primary-text">Minds Crown</h6>
+                  <h6 class="secondary-text">Talent shines despite competition.</h6>
+                  <h6 class="secondary-text soljustify">Winner?...Oh runner? then lace up for the finale. Showcase your
+                    skills and test your limits in this event to become the winner of winners and get titled as 'Minds
+                    Crown'. Do take the chance to prove your ability and claim your place in the running history!
+                  </h6>
                 </div>
-                <button class="primary-text" onclick="window.location.href='/algoventure'">Explore More</button>
+                <button class="primary-text" onclick="window.location.href='/mindscrown'">Explore More</button>
                 <div class="details">
                   <div class="rating">
-                    <h6 class="secondary-text">Online</h6>
+                    <h6 class="secondary-text">Offline</h6>
                   </div>
                   <div class="activity">
-                    <h6 class="secondary-text">Technical</h6>
+                    <h6 class="secondary-text">Non-technical</h6>
                   </div>
                 </div>
               </div>
@@ -478,7 +528,7 @@
 </script>
 
 <script>
-  const counterElement = document.getElementById('counter');
+  const counterElement = document.getElementById('');
   const startValue = 0;
   const endValue = 100000;
   const duration = 1500;

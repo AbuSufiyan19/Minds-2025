@@ -459,7 +459,7 @@ body::-webkit-scrollbar {
 }
 
 #counter {
-  font-size: 140px;
+  font-size: 50px;
   font-weight: bolder;
   margin-top: 20px;
   background: linear-gradient(45deg, #dbb13b, #ffbe0a, #dbb13b);
@@ -1018,7 +1018,7 @@ footer h4 {
     margin-top: 20px;
   }
   #counter {
-    font-size: 70px;
+    font-size: 30px;
   }
   .prizepool img {
     margin-top: 20px;
