@@ -14,15 +14,15 @@ function nextSection(current) {
     const nextSection = document.getElementById(`section${current + 1}`);
     
     if (validateSection(currentSection)) {
-        if (emailflag != 1) {
-            showNotification('OTP has not been sent',false);
+        if (current==1 && emailflag != 1) {
+            showNotification('Enter Valid Official Email Address',false);
             return;
         }
 
-        if (verifyflag != 1) {
-            showNotification('OTP is not verified',false);
-            return;
-        }
+        // if (verifyflag != 1) {
+        //     showNotification('OTP is not verified',false);
+        //     return;
+        // }
         if(current==1 && passflag != 1){
             showNotification('Enter a valid Password',false);
             return;
@@ -125,108 +125,108 @@ function validateSection(section) {
 
 
 
-function sendVerificationEmail() {
-    const emailInput = document.getElementById('email');
-    const sendOtpButton = emailInput.nextElementSibling;
-    const email = emailInput.value;
+// function sendVerificationEmail() {
+//     const emailInput = document.getElementById('email');
+//     const sendOtpButton = emailInput.nextElementSibling;
+//     const email = emailInput.value;
      
-    const regex = /^2[34]mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
+//     const regex = /^2[34]mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
 
 
-    if (!regex.test(email)) {
-        showNotification('Please enter a valid email address.', false);
-        showError(emailInput, 'Please enter a valid email address.');
-        return; 
-    }
+//     if (!regex.test(email)) {
+//         showNotification('Please enter a valid email address.', false);
+//         showError(emailInput, 'Please enter a valid email address.');
+//         return; 
+//     }
     
-    sendOtpButton.disabled = true;
-    sendOtpButton.textContent = 'Sending...';
+//     sendOtpButton.disabled = true;
+//     sendOtpButton.textContent = 'Sending...';
 
-    fetch('/send-otp', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-            email,
-            subject: 'Your Minds 2025 OTP Verification Code',
-            htmlContent: `
-            <p>Dear Participant,</p>
-            <p>Welcome to Minds-2025</p>
-            <p>To proceed, please use the following One-Time Password (OTP):</p>
-            <p>Your OTP code is <strong>{{otp}}</strong></p>
-            <p>This OTP is valid for the next <strong>10 minutes</strong>. Please do not share this code with anyone.</p>
-            <p>If you have any queries or need assistance, please feel free to reach out to us at minds@psgtech.ac.in</p>
-            <p><strong>Best regards,</strong><br>
-            Registration Team<br>
-            Minds-2025<br>
-            </p>
-            `  
-        })
-    })
-    .then(async response => {
-        const data = await response.json();
-        if (response.status === 200) {
-            emailflag = 1;
-            sendOtpButton.textContent = 'OTP Sent';
-            showNotification(`OTP sent to ${email}`, true)
-        } else {
-            throw new Error(data.message || 'Unknown error occurred');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        sendOtpButton.disabled = false;
-        sendOtpButton.textContent = 'Send OTP';
-        showNotification(error.message, false);
-        showError(emailInput, error.message);
-        document.getElementById('otpError').textContent = error.message;
-    })
+//     fetch('/send-otp', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ 
+//             email,
+//             subject: 'Your Minds 2025 OTP Verification Code',
+//             htmlContent: `
+//             <p>Dear Participant,</p>
+//             <p>Welcome to Minds-2025</p>
+//             <p>To proceed, please use the following One-Time Password (OTP):</p>
+//             <p>Your OTP code is <strong>{{otp}}</strong></p>
+//             <p>This OTP is valid for the next <strong>10 minutes</strong>. Please do not share this code with anyone.</p>
+//             <p>If you have any queries or need assistance, please feel free to reach out to us at minds@psgtech.ac.in</p>
+//             <p><strong>Best regards,</strong><br>
+//             Registration Team<br>
+//             Minds-2025<br>
+//             </p>
+//             `  
+//         })
+//     })
+//     .then(async response => {
+//         const data = await response.json();
+//         if (response.status === 200) {
+//             emailflag = 1;
+//             sendOtpButton.textContent = 'OTP Sent';
+//             showNotification(`OTP sent to ${email}`, true)
+//         } else {
+//             throw new Error(data.message || 'Unknown error occurred');
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         sendOtpButton.disabled = false;
+//         sendOtpButton.textContent = 'Send OTP';
+//         showNotification(error.message, false);
+//         showError(emailInput, error.message);
+//         document.getElementById('otpError').textContent = error.message;
+//     })
        
-}
+// }
 
 //verify Otp
-function verify(){
-    email = document.getElementById('email').value;
-    const otpInput = document.getElementById('otp');
-    const verifyOtpButton = otpInput.nextElementSibling;
-    const otp = otpInput.value;
+// function verify(){
+//     email = document.getElementById('email').value;
+//     const otpInput = document.getElementById('otp');
+//     const verifyOtpButton = otpInput.nextElementSibling;
+//     const otp = otpInput.value;
 
-    verifyOtpButton.disabled = true;
-    verifyOtpButton.textContent = 'Verifying...';
+//     verifyOtpButton.disabled = true;
+//     verifyOtpButton.textContent = 'Verifying...';
 
-    fetch('/verify-otp', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, otp })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Verification response:', data);
-        if (data.message === 'OTP verified successfully') {
-            showNotification('OTP verified successfully',true);
-            document.getElementById('otpError').textContent = data.message;
-            verifyflag=1;
-            verifyOtpButton.textContent = 'Verified';
-            document.getElementById('email').readOnly = true;
-            document.getElementById('otp').readOnly = true;
+//     fetch('/verify-otp', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ email, otp })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Verification response:', data);
+//         if (data.message === 'OTP verified successfully') {
+//             showNotification('OTP verified successfully',true);
+//             document.getElementById('otpError').textContent = data.message;
+//             verifyflag=1;
+//             verifyOtpButton.textContent = 'Verified';
+//             document.getElementById('email').readOnly = true;
+//             document.getElementById('otp').readOnly = true;
 
-        } else { 
-            showNotification('OTP verification failed',false);
-            document.getElementById('otpError').textContent = data.message;
-            verifyOtpButton.disabled = false;
-            verifyOtpButton.textContent = 'Verify';
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        showNotification('An error occurred. Please try again.', false);
-        verifyOtpButton.disabled = false;
-        verifyOtpButton.textContent = 'Verify';
-    });
-}
+//         } else { 
+//             showNotification('OTP verification failed',false);
+//             document.getElementById('otpError').textContent = data.message;
+//             verifyOtpButton.disabled = false;
+//             verifyOtpButton.textContent = 'Verify';
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         showNotification('An error occurred. Please try again.', false);
+//         verifyOtpButton.disabled = false;
+//         verifyOtpButton.textContent = 'Verify';
+//     });
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     const emailInput = document.getElementById('email');
@@ -239,11 +239,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactNumber = document.getElementById('contactNumber');
 
     emailInput.addEventListener('input', function() {
-        const regex = /^2[34]mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)@psgtech\.ac\.in$/;
+        const regex = /^2[34]mx(1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-5][0-9]|360)@psgtech\.ac\.in$/;
         if (!regex.test(this.value)) {
-            showError1(this, 'Please enter a valid email address.');
+            showError1(this, 'Please enter your official email address.');
+            emailflag = 0;
         } else {
             hideError1(this);
+            emailflag = 1;
         }
     });
 
@@ -283,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     rollNumber.addEventListener('input', function() {
-        const regex = /^2[34][mM][xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-2][0-9]|330|4[0-2][0-9]|430)$/;
+        const regex = /^2[34][mM][xX](1[0-2][0-9]|130|2[0-2][0-9]|230|3[0-5][0-9]|360)$/;
         if (!regex.test(this.value)) {
             showError(this, 'Roll number should only contain letters and numbers.');
             rollflag=0;

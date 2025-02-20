@@ -137,65 +137,52 @@ router.post('/eventReg', async (req, res) => {
             $push: { eventids: teamId }
         });
 
-        // const existsDeleteLog = await deleteLog.findOne({
-        //     email: user.email,
-        //     EventName: sanitizedEventName
-        // });
-        // if (existsDeleteLog) {
-        //     const delted = await deleteLog.updateOne(
-        //         { email: user.email },
-        //         { $pull: { EventName: sanitizedEventName } }
-        //     );
-        //     const updatedDeleteLog = await deleteLog.findOne({ email: user.email })
-        //     if (updatedDeleteLog.EventName.length === 0) {
-        //         await deleteLog.findOneAndDelete({ email: user.email });
-        //     }
+       
+        // const teamSize = eventTeamSize[sanitizedEventName]
+        // const eDate = eventDate[sanitizedEventName]
+        // const minSize = eventMinTeamSize[sanitizedEventName]
+        // const imgUrl = eventUrl[sanitizedEventName]
+        // var HTMLContent, subContent;
+        // if (teamSize > 1) {
+
+        //     subContent = `Minds-2025 Team Registration successful for ${sanitizedEventName} - Minds 2025`
+        //     HTMLContent = `
+        //         <p>Dear ${user.studentName},</p>
+        //         <p>Congratulations! You’ve successfully created a team and registered for the event ${sanitizedEventName} at Minds - 2025.</p>
+        //         <p>Please share your team code <strong>${teamId}</strong> with your teammates so they can join your team and complete their registration.</p>
+        //         <p>Also note that the minimum number of members required for your team to participate in this event is <strong>${minSize}</strong>. Ensure your team meets this requirement before the event.</p>
+        //         <p>Do ensure that all team members are available to participate during the event. We look forward to your participation and wish you the best of luck!</p>
+        //         <p>Event Date: <strong>${eDate}</strong> </p>
+        //         <p>Don't forget to explore and participate in other exciting events to make the most of your experience!</p>
+        //         <p>If you’ve any questions or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
+        //         <p><strong>Best regards,</strong><br>
+        //         Registration Team<br>
+        //         Minds-2025</p>
+        //         `
+        // } else {
+        //     subContent = `Minds-2025 Event Registration Confirmation for ${sanitizedEventName} - Minds 2025`
+        //     HTMLContent = `
+        //         <p>Dear ${user.studentName},</p>
+        //         <p>Congratulations! You’ve successfully registered for the event <strong>${sanitizedEventName}</strong> at <strong>Minds - 2025</strong>.<br>
+        //         <p>Please be available to participate during the event. We look forward to your participation and wish you the best of luck!</p>
+        //         <p>Event Date: <strong>${eDate}</strong> </p>
+        //         <p>Don't forget to explore and participate in other exciting events of Minds - 2025</a> to make the most of your experience!</p>
+        //         <p>If you’ve any questions or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
+        //         <p><strong>Best regards,</strong><br>
+        //         Registration Team<br>
+        //         Minds-2025
+        //         </p>
+
+        //         `
         // }
-        const teamSize = eventTeamSize[sanitizedEventName]
-        const eDate = eventDate[sanitizedEventName]
-        const minSize = eventMinTeamSize[sanitizedEventName]
-        const imgUrl = eventUrl[sanitizedEventName]
-        var HTMLContent, subContent;
-        if (teamSize > 1) {
+        // const mailOptions = {
+        //     from: process.env.EMAIL_USER,
+        //     to: user.email,
+        //     subject: subContent,
+        //     html: HTMLContent
+        // };
 
-            subContent = `Minds-2025 Team Registration successful for ${sanitizedEventName} - Minds 2025`
-            HTMLContent = `
-                <p>Dear ${user.studentName},</p>
-                <p>Congratulations! You’ve successfully created a team and registered for the event ${sanitizedEventName} at Minds - 2025.</p>
-                <p>Please share your team code <strong>${teamId}</strong> with your teammates so they can join your team and complete their registration.</p>
-                <p>Also note that the minimum number of members required for your team to participate in this event is <strong>${minSize}</strong>. Ensure your team meets this requirement before the event.</p>
-                <p>Do ensure that all team members are available to participate during the event. We look forward to your participation and wish you the best of luck!</p>
-                <p>Event Date: <strong>${eDate}</strong> </p>
-                <p>Don't forget to explore and participate in other exciting events to make the most of your experience!</p>
-                <p>If you’ve any questions or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
-                <p><strong>Best regards,</strong><br>
-                Registration Team<br>
-                Minds-2025</p>
-                `
-        } else {
-            subContent = `Minds-2025 Event Registration Confirmation for ${sanitizedEventName} - Minds 2025`
-            HTMLContent = `
-                <p>Dear ${user.studentName},</p>
-                <p>Congratulations! You’ve successfully registered for the event <strong>${sanitizedEventName}</strong> at <strong>Minds - 2025</strong>.<br>
-                <p>Please be available to participate during the event. We look forward to your participation and wish you the best of luck!</p>
-                <p>Event Date: <strong>${eDate}</strong> </p>
-                <p>Don't forget to explore and participate in other exciting events of Minds - 2025</a> to make the most of your experience!</p>
-                <p>If you’ve any questions or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
-                <p><strong>Best regards,</strong><br>
-                Registration Team<br>
-                Minds-2025
-                </p>
-
-                `
-        }
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: user.email,
-            subject: subContent,
-            html: HTMLContent
-        };
-
-        transporter.sendMail(mailOptions);
+        // transporter.sendMail(mailOptions);
         res.status(200).json({ message: 'Event registration successful', teamId: teamId });
     } catch (error) {
         res.status(500).json({ message: 'Internal server error' });
@@ -207,20 +194,20 @@ router.post('/eventReg', async (req, res) => {
 // router.get('/myevent',(req,res) => {
 //     res.render('myevents')
 // })
-const eventDate = {
-    'AlgoCode': 'September 21 & 22',
-    'CodeSprint': 'Online: September 18 & 19 and Offline: September 22',
-    'CrickBidAuction': 'Online: September 19 and Offline: September 21',
-    'Datathon': 'September 21 & 22',
-    'LastStand': 'September 21st and 22nd',
-    'MathPirates': 'September 21st and 22nd',
-    'NetHunt': 'Online: September 16 - 20 and Offline: September 22',
-    'PicturePerfect': 'Online: September 14 - 17 and Offline: September 21st and 22nd',
-    'Techiadz': 'September 21st and 22nd',
-    'Thinklytics': 'September 21st and 22nd',
-    'TripleTrouble': 'September 21st and 22nd',
-    'WittyMindz': 'September 21st and 22nd',
-}
+// const eventDate = {
+//     'AlgoCode': 'September 21 & 22',
+//     'CodeSprint': 'Online: September 18 & 19 and Offline: September 22',
+//     'CrickBidAuction': 'Online: September 19 and Offline: September 21',
+//     'Datathon': 'September 21 & 22',
+//     'LastStand': 'September 21st and 22nd',
+//     'MathPirates': 'September 21st and 22nd',
+//     'NetHunt': 'Online: September 16 - 20 and Offline: September 22',
+//     'PicturePerfect': 'Online: September 14 - 17 and Offline: September 21st and 22nd',
+//     'Techiadz': 'September 21st and 22nd',
+//     'Thinklytics': 'September 21st and 22nd',
+//     'TripleTrouble': 'September 21st and 22nd',
+//     'WittyMindz': 'September 21st and 22nd',
+// }
 const eventUrl = {
     'AlgoCode': 'https://i.imgur.com/IYretuc.jpeg',
     'CodeSprint': 'https://i.imgur.com/L4sZydj.jpeg',
@@ -422,27 +409,27 @@ router.post('/joinevent', async (req, res) => {
         //         await deleteLog.findOneAndDelete({ email: user.email });
         //     }
         // }
-        const minSize = eventMinTeamSize[sanitizedEventName]
-        const imgUrl = eventUrl[sanitizedEventName];
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: user.email,
-            subject: `Successfully Joined Team for ${sanitizedEventName} - Minds 2025`,
-            html: `
-            <p>Dear ${user.studentName},</p>
-            <p>You’ve successfully joined your team for the event <strong>${sanitizedEventName}</strong> using the team code <strong>${teamId}</strong> at <strong>Minds-2025</strong>.</p>
-            <p>Thank you for being a part of this exciting event! Please coordinate with your team to prepare for the competition, and ensure everyone is ready for the big day.</p>
-            <p>Also note that the minimum number of members required for your team to participate in this event is <strong>${minSize}</strong>. Ensure your team meets this requirement before the event.</p>
-            <p>Please ensure that all team members participate in the event. We look forward to your active participation and wish you the best of luck!</p>
-            <p>Event Date: <strong>${eDate}</strong></p>
-            <p>Don't forget to explore and participate in other exciting events of Minds - 2025</a> to make the most of your experience!</p>
-            <p>If you’ve any queries or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
-            <p><strong>Best regards,</strong><br>
-            Registration Team<br>
-            Minds-2025</p>  
-            `
-        };
-        transporter.sendMail(mailOptions);
+        // const minSize = eventMinTeamSize[sanitizedEventName]
+        // const imgUrl = eventUrl[sanitizedEventName];
+        // const mailOptions = {
+        //     from: process.env.EMAIL_USER,
+        //     to: user.email,
+        //     subject: `Successfully Joined Team for ${sanitizedEventName} - Minds 2025`,
+        //     html: `
+        //     <p>Dear ${user.studentName},</p>
+        //     <p>You’ve successfully joined your team for the event <strong>${sanitizedEventName}</strong> using the team code <strong>${teamId}</strong> at <strong>Minds-2025</strong>.</p>
+        //     <p>Thank you for being a part of this exciting event! Please coordinate with your team to prepare for the competition, and ensure everyone is ready for the big day.</p>
+        //     <p>Also note that the minimum number of members required for your team to participate in this event is <strong>${minSize}</strong>. Ensure your team meets this requirement before the event.</p>
+        //     <p>Please ensure that all team members participate in the event. We look forward to your active participation and wish you the best of luck!</p>
+        //     <p>Event Date: <strong>${eDate}</strong></p>
+        //     <p>Don't forget to explore and participate in other exciting events of Minds - 2025</a> to make the most of your experience!</p>
+        //     <p>If you’ve any queries or need further assistance, feel free to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue; font-weight:bold;">${process.env.EMAIL_CONTACT}</a>.</p>
+        //     <p><strong>Best regards,</strong><br>
+        //     Registration Team<br>
+        //     Minds-2025</p>  
+        //     `
+        // };
+        // transporter.sendMail(mailOptions);
         res.json({ success: true, message: 'Joined the team successfully' });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Internal server error' });
@@ -531,28 +518,28 @@ router.delete('/delete/:schemaName/:teamId', async (req, res) => {
         // await session.commitTransaction();
         // session.endSession();
         // Send the cancellation email
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: email,
-            subject: `Cancellation of Registration for ${sanitizedEventName} - Minds-2025`,
-            html: `
-            <p>Dear ${name},</p>
-            <p>We’ve received your request to cancel your registration for the <strong>${sanitizedEventName}</strong> at the <strong>Minds-2025</strong></p>
-            <p>Your registration has been successfully cancelled. We’re sorry to hear that you won’t be able to join us this time. If there is anything we can do to assist you or if you have any further queries, please do not hesitate to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue;">${process.env.EMAIL_CONTACT}</a>.</p><br>
-            <p>We hope to see you in future events.</p>
-            <p><strong>Best regards,</strong><br>
-            Registration Team<br>
-            Minds-2025</p>
-            `
-        };
+        // const mailOptions = {
+        //     from: process.env.EMAIL_USER,
+        //     to: email,
+        //     subject: `Cancellation of Registration for ${sanitizedEventName} - Minds-2025`,
+        //     html: `
+        //     <p>Dear ${name},</p>
+        //     <p>We’ve received your request to cancel your registration for the <strong>${sanitizedEventName}</strong> at the <strong>Minds-2025</strong></p>
+        //     <p>Your registration has been successfully cancelled. We’re sorry to hear that you won’t be able to join us this time. If there is anything we can do to assist you or if you have any further queries, please do not hesitate to contact us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:blue;">${process.env.EMAIL_CONTACT}</a>.</p><br>
+        //     <p>We hope to see you in future events.</p>
+        //     <p><strong>Best regards,</strong><br>
+        //     Registration Team<br>
+        //     Minds-2025</p>
+        //     `
+        // };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.error('Error sending email:', error);
-            } else {
-                console.log('Email sent:', info.response);
-            }
-        });
+        // transporter.sendMail(mailOptions, (error, info) => {
+        //     if (error) {
+        //         console.error('Error sending email:', error);
+        //     } else {
+        //         console.log('Email sent:', info.response);
+        //     }
+        // });
 
         return res.status(200).json({ success: true });
 
