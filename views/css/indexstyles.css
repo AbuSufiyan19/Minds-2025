@@ -947,7 +947,7 @@ footer {
   color: #fff;
 }
 footer h1 {
-  color: #1aabc4;
+  color: #f6c453;
 }
 footer h4 {
   font-weight: 600;
@@ -1089,7 +1089,7 @@ footer h4 {
   margin-top: 45px;
   font-size: 30px;
   margin-bottom: -10px;
-  color: #2494a2;
+  color: #ffbe0a;
   font-style: italic;
   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
@@ -1182,6 +1182,10 @@ footer h4 {
   }
   .fflinks {
     margin-top: 30px;
+  }
+  .logintext img{
+    height: 140px;
+    width: 320px;
   }
 }
 

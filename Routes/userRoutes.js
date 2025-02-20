@@ -120,37 +120,37 @@ router.post('/register', async (req, res) => {
 
         // Save the user document
         const savedUser = await newUser.save();
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: email,
-            subject: 'Welcome to Minds-2025 - Successfully Registered',
-            html: `
-            <p>Dear ${req.body.studentName},</p>
-            <p>Thank you for registering for <strong>Minds - 2025</strong>. Your account has been successfully created.</p>
-            <p><strong>Minds - 2025</strong> takes place on <strong>February 27, 28 & March 1, 2025</strong>.Please check and register for the events you're interested in.</p>
+        // const mailOptions = {
+        //     from: process.env.EMAIL_USER,
+        //     to: email,
+        //     subject: 'Welcome to Minds-2025 - Successfully Registered',
+        //     html: `
+        //     <p>Dear ${req.body.studentName},</p>
+        //     <p>Thank you for registering for <strong>Minds - 2025</strong>. Your account has been successfully created.</p>
+        //     <p><strong>Minds - 2025</strong> takes place on <strong>February 27, 28 & March 1, 2025</strong>.Please check and register for the events you're interested in.</p>
 
-            <h3>Next Steps:</h3>
-            <ol>
-                <li><strong>Explore Events:</strong> Learn more about each event, including their descriptions, participation details.</li>
-                <li><strong>Register for Events:</strong>
-                    <ul>
-                        <li><strong>Individual Events:</strong> Select the events you'd like to participate in and complete the registration process.</li>
-                        <li><strong>Team Events:</strong> Set up your team by either creating a new team and sharing the team code with your members, or joining an existing team using a team code.</li>
-                    </ul>
-                </li>
-            </ol>
+        //     <h3>Next Steps:</h3>
+        //     <ol>
+        //         <li><strong>Explore Events:</strong> Learn more about each event, including their descriptions, participation details.</li>
+        //         <li><strong>Register for Events:</strong>
+        //             <ul>
+        //                 <li><strong>Individual Events:</strong> Select the events you'd like to participate in and complete the registration process.</li>
+        //                 <li><strong>Team Events:</strong> Set up your team by either creating a new team and sharing the team code with your members, or joining an existing team using a team code.</li>
+        //             </ul>
+        //         </li>
+        //     </ol>
 
-            <p>You will receive a confirmation email for each successful registration.</p>
-            <p>We are thrilled to have you as a part of our symposium community and look forward to your active participation. If you have any queries or need assistance, please don't hesitate to reach out to us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:rgb(0, 115, 255);">${process.env.EMAIL_CONTACT}</a>.</p>
+        //     <p>You will receive a confirmation email for each successful registration.</p>
+        //     <p>We are thrilled to have you as a part of our symposium community and look forward to your active participation. If you have any queries or need assistance, please don't hesitate to reach out to us at <a href="mailto:${process.env.EMAIL_CONTACT}" style="color:rgb(0, 115, 255);">${process.env.EMAIL_CONTACT}</a>.</p>
             
-            <br>
-            <p><strong>Best regards,</strong><br>
-                Registration Team <br>
-                Minds - 2025</p>
-            `
+        //     <br>
+        //     <p><strong>Best regards,</strong><br>
+        //         Registration Team <br>
+        //         Minds - 2025</p>
+        //     `
             
-        };
-        transporter.sendMail(mailOptions);
+        // };
+        // transporter.sendMail(mailOptions);
 
         res.status(201).json({ message: 'User registered successfully'  , user: savedUser });
     } catch (error) {
