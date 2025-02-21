@@ -52,14 +52,12 @@ const ALLOWED_PUBLIC_IPS = ["14.139.180.67", "103.224.33.35"];
 app.use((req, res, next) => {
     // Extract the first IP from x-forwarded-for (public IP)
     const clientIp = req.headers["x-forwarded-for"]?.split(",")[0].trim() || req.connection.remoteAddress;
-    console.log(req.connection.remoteAddress);
+
     console.log(`Client IP: ${clientIp}`);
 
     if (!ALLOWED_PUBLIC_IPS.includes(clientIp)) {
         return res.status(403).json({ error: "Access Denied. Connect to the college WiFi." });
     }
-
-
     next();
 });
 
@@ -79,13 +77,13 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started on http://localhost:${PORT}`);
 });
 
-const PING_URL = process.env.RENDER_URL || "https://minds2025.onrender.com"; // Replace with your Render URL
+// const PING_URL = process.env.RENDER_URL || "https://minds2025.onrender.com"; // Replace with your Render URL
 
-cron.schedule('* * * * *', async () => {
-    try {
-        const response = await axios.get(PING_URL);
-        console.log(`✅ Ping successful at ${new Date().toISOString()} - Status: ${response.status}`);
-    } catch (error) {
-        console.error(`❌ Ping failed: ${error.message}`);
-    }
-});
+// cron.schedule('* * * * *', async () => {
+//     try {
+//         const response = await axios.get(PING_URL);
+//         console.log(`✅ Ping successful at ${new Date().toISOString()} - Status: ${response.status}`);
+//     } catch (error) {
+//         console.error(`❌ Ping failed: ${error.message}`);
+//     }
+// });
