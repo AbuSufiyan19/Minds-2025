@@ -49,12 +49,13 @@ const ALLOWED_PUBLIC_IP = process.env.ALLOWED_PUBLIC_IP || "14.139.180.67"; // R
 
 // Middleware to restrict access based on Public IP
 app.use((req, res, next) => {
-    const clientIp = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    // Extract the first IP from x-forwarded-for (public IP)
+    const clientIp = req.headers["x-forwarded-for"]?.split(",")[0].trim() || req.connection.remoteAddress;
 
     console.log(`Client IP: ${clientIp}`);
 
     if (clientIp !== ALLOWED_PUBLIC_IP) {
-        return res.status(403).json({ error: "Access Denied. Please connect to the allowed WiFi." });
+        return res.status(403).json({ error: "Access Denied. Connect to the allowed WiFi." });
     }
 
     next();
