@@ -47,21 +47,43 @@ app.use((req, res, next) => {
     res.set('Expires', '0');
     next();
 });
-const ALLOWED_PUBLIC_IPS = ["14.139.180.67", "103.224.33.35"]; 
-// Middleware to restrict access based on Public IP
+// const ALLOWED_PUBLIC_IPS = ["14.139.180.67", "103.224.33.35"]; 
+// // Middleware to restrict access based on Public IP
+// app.use((req, res, next) => {
+//     // Extract the first IP from x-forwarded-for (public IP)
+//     const clientIp = req.headers["x-forwarded-for"]?.split(",")[0].trim() || req.connection.remoteAddress;
+
+//     console.log(`Client IP: ${clientIp}`);
+
+//     if (!ALLOWED_PUBLIC_IPS.includes(clientIp)) {
+//         return res.status(403).json({ error: "Access Denied. Connect to the college WiFi." });
+//     }
+
+
+//     next();
+// });
+
 app.use((req, res, next) => {
-    // Extract the first IP from x-forwarded-for (public IP)
     const clientIp = req.headers["x-forwarded-for"]?.split(",")[0].trim() || req.connection.remoteAddress;
 
     console.log(`Client IP: ${clientIp}`);
 
+    // Allow requests from within Render (localhost and internal IPs)
+    if (clientIp === "127.0.0.1" || clientIp === "::1") {
+        console.log("✅ Internal Render ping allowed");
+        return next();
+    }
+
+    // Allow only specific public WiFi IPs
+    const ALLOWED_PUBLIC_IPS = ["14.139.180.67", "103.224.33.35"];
     if (!ALLOWED_PUBLIC_IPS.includes(clientIp)) {
+        console.log("❌ Access Denied: Client IP is not allowed");
         return res.status(403).json({ error: "Access Denied. Connect to the college WiFi." });
     }
 
-
     next();
 });
+
 
 const userRoutes = require('./Routes/userRoutes');
 const otproute = require('./Routes/verifyotp');
