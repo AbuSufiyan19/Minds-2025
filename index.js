@@ -55,7 +55,7 @@ app.use((req, res, next) => {
     console.log(`Client IP: ${clientIp}`);
 
     if (clientIp !== ALLOWED_PUBLIC_IP) {
-        return res.status(403).json({ error: "Access Denied. Connect to the allowed WiFi." });
+        return res.status(403).json({ error: "Access Denied. Connect to the college WiFi." });
     }
 
     next();
