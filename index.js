@@ -45,7 +45,7 @@ app.use((req, res, next) => {
     res.set('Expires', '0');
     next();
 });
-const ALLOWED_PUBLIC_IP = process.env.ALLOWED_PUBLIC_IP || "192.168.2.152"; // Replace with your WiFi's public IP
+const ALLOWED_PUBLIC_IP = process.env.ALLOWED_PUBLIC_IP || "14.139.180.67"; // Replace with your WiFi's public IP
 
 // Middleware to restrict access based on Public IP
 app.use((req, res, next) => {
