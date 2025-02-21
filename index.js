@@ -45,8 +45,7 @@ app.use((req, res, next) => {
     res.set('Expires', '0');
     next();
 });
-const ALLOWED_PUBLIC_IP = process.env.ALLOWED_PUBLIC_IP || "14.139.180.67"; // Replace with your WiFi's public IP
-
+const ALLOWED_PUBLIC_IPS = ["14.139.180.67", "103.224.33.35"]; 
 // Middleware to restrict access based on Public IP
 app.use((req, res, next) => {
     // Extract the first IP from x-forwarded-for (public IP)
@@ -54,7 +53,7 @@ app.use((req, res, next) => {
 
     console.log(`Client IP: ${clientIp}`);
 
-    if (clientIp !== ALLOWED_PUBLIC_IP) {
+    if (clientIp !== ALLOWED_PUBLIC_IPS) {
         return res.status(403).json({ error: "Access Denied. Connect to the college WiFi." });
     }
 
