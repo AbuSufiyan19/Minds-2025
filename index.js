@@ -45,6 +45,20 @@ app.use((req, res, next) => {
     res.set('Expires', '0');
     next();
 });
+const ALLOWED_PUBLIC_IP = process.env.ALLOWED_PUBLIC_IP || "192.168.2.152"; // Replace with your WiFi's public IP
+
+// Middleware to restrict access based on Public IP
+app.use((req, res, next) => {
+    const clientIp = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+
+    console.log(`Client IP: ${clientIp}`);
+
+    if (clientIp !== ALLOWED_PUBLIC_IP) {
+        return res.status(403).json({ error: "Access Denied. Please connect to the allowed WiFi." });
+    }
+
+    next();
+});
 
 const userRoutes = require('./Routes/userRoutes');
 const otproute = require('./Routes/verifyotp');
