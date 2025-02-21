@@ -75,3 +75,14 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started on http://localhost:${PORT}`);
 });
+
+const PING_URL = process.env.RENDER_URL || "https://minds2025.onrender.com"; // Replace with your Render URL
+
+cron.schedule('* * * * *', async () => {
+    try {
+        const response = await axios.get(PING_URL);
+        console.log(`✅ Ping successful at ${new Date().toISOString()} - Status: ${response.status}`);
+    } catch (error) {
+        console.error(`❌ Ping failed: ${error.message}`);
+    }
+});
