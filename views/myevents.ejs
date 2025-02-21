@@ -64,7 +64,7 @@
                     <span><%= prefixKey %></span> <!-- Display the prefix like TT, WM -->
                 <% } %>
             </h6>                
-            <% if (event.prefix !== 'NT' && event.prefix !== 'CS' && event.prefix !== 'PP' && event.prefix !== 'DX') { %>
+            <% if (event.prefix !== 'NT' && event.prefix !== 'CS' && event.prefix !== 'PP') { %>
                 <h6 class="teamid1">Team ID:&nbsp;<%= event.eventDetail.teamId %></h6>
                 <% } %>
                 <div class="participants">

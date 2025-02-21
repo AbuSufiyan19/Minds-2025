@@ -50,17 +50,26 @@
                 </div>
             </div>
             <div class="details">
-                <div class="register">
-                    <h2>Register Here</h2>
+                <div class="register" id="registerButton">
+                    <h2>Register Here!</h2>
+                    <div id="button-container" class="hidden">
+                        <button class="reg-buttons" onclick="register2('DesignX')">
+                            Create Team
+                        </button>
+                        <div class="btn-line"></div>
+                        <button class="reg-buttons" onclick="window.location.href='/myevent'">
+                            Join Team
+                        </button>
+                    </div>
                 </div>
                 <div class="info">
                     <div class="team-size">
                         <h3>Team size:</h3>
-                        <p>1</p>
+                        <p>2</p>
                     </div>
                     <div class="date">
-                        <h3>TBA</h3>
-                        <p>February 2025</p>
+                        <h3>01st MAR</h3>
+                        <p>(9 AM - 12 PM)</p>
                     </div>
                 </div>
                 <div class="contact">
@@ -108,9 +117,6 @@
         window.onload = applyVantaBackground;
         window.onresize = applyVantaBackground;
 
-        document.querySelector('.register h2').addEventListener('click', function(){
-            register('DesignX');
-        });
 
     </script>
     <script src="./js/eventRegister.js"></script>
